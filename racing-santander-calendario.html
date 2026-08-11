@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calendario | Real Racing Club de Santander | Sudor y Gloria</title>
+  <style>
+    body { margin:0; font-family: Arial, sans-serif; background:#fff; color:#000; }
+    header { background:#c62828; text-align:center; padding:20px; }
+    header a { color:#fff; text-decoration:none; font-size:20px; font-weight:bold; }
+    .club-header { display:flex; align-items:center; gap:20px; max-width:900px; margin:20px auto; padding:0 20px; }
+    .club-header img { width:80px; height:80px; object-fit:contain; }
+    .club-header h1 { font-size:1.6rem; margin:0; }
+    .club-header p { margin:4px 0 0; color:#555; font-size:0.95rem; }
+    nav.tabs { background:#111; display:flex; justify-content:center; flex-wrap:wrap; gap:0; }
+    nav.tabs a { color:#fff; text-decoration:none; font-weight:bold; padding:12px 16px; font-size:0.9rem; }
+    nav.tabs a.activo, nav.tabs a:hover { background:#c62828; }
+    .contenido { padding:20px; max-width:900px; margin:auto; }
+    table.calendario { width:100%; border-collapse:collapse; font-size:0.9rem; }
+    table.calendario th, table.calendario td { border:1px solid #ddd; padding:8px; text-align:left; }
+    table.calendario th { background:#f0f0f0; }
+    .nota { color:#777; font-size:0.85rem; margin-top:10px; }
+    footer { background:#c62828; color:#fff; text-align:center; padding:20px; margin-top:40px; }
+  </style>
+  <link rel="stylesheet" href="tema.css">
+  <script src="tema.js" defer></script>
+</head>
+<body>
+  <header><a href="index.html">SUDOR Y GLORIA</a></header>
+
+  <div class="club-header">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Real_Racing_Club_de_Santander_logo.svg?width=100" alt="Escudo Real Racing Club de Santander">
+    <div>
+      <h1>Real Racing Club de Santander</h1>
+      <p>Primera División · Estadio El Sardinero · Fundado en 1913</p>
+    </div>
+  </div>
+
+  <nav class="tabs">
+    <a href="racing-santander.html">Noticias</a>
+    <a href="racing-santander-ficha.html">Ficha</a>
+    <a href="racing-santander-calendario.html" class="activo">Calendario</a>
+    <a href="racing-santander-estadisticas.html">Estadísticas</a>
+    <a href="racing-santander-plantilla.html">Plantilla</a>
+    <a href="racing-santander-clasificacion.html">Clasificación</a>
+    <a href="racing-santander-palmares.html">Palmarés</a>
+  </nav>
+
+  <div class="contenido">
+    <h2>Calendario 2026-27</h2>
+    <table class="calendario">
+      <tr><th>Jornada</th><th>Partido</th><th>Fecha</th></tr>
+      <tr><td>1</td><td>Racing de Santander vs. Por confirmar</td><td>15-16 agosto 2026</td></tr>
+      <tr><td>2</td><td>Por confirmar vs. Racing de Santander</td><td>22-23 agosto 2026</td></tr>
+      <tr><td>3</td><td>Racing de Santander vs. Por confirmar</td><td>29-30 agosto 2026</td></tr>
+    </table>
+    <p class="nota">El calendario completo de LALIGA 2026-27 se hace público tras el sorteo oficial; esta tabla es un marcador de posición para que puedas sustituirlo por las jornadas reales en cuanto se publiquen.</p>
+  </div>
+
+  <footer>
+    Contacto: contacto@sudorygloria.com — Síguenos: Twitter | Instagram | Facebook
+  </footer>
+</body>
+</html>

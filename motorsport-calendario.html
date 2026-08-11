@@ -3,37 +3,374 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Calendario F1 | Sudor y Gloria</title>
+  <title>Calendario F1 2026 | Sudor y Gloria</title>
   <style>
-    body { margin:0; font-family: Arial, sans-serif; background: #fff; color: #000; }
-    header { background: #c62828; text-align: center; padding: 20px; }
-    header a { color: #fff; text-decoration: none; font-size: 20px; font-weight: bold; }
-    nav { background: #c62828; display: flex; justify-content: center; gap: 20px; padding: 10px 0; }
-    nav a { color: #fff; text-decoration: none; font-weight: bold; }
-    .contenido { padding: 20px; max-width: 800px; margin: auto; }
-    .contenido h2 { font-weight: bold; text-align: left; margin-bottom: 10px; }
-    .evento { margin-bottom: 10px; }
-    footer { background: #c62828; color: #fff; text-align: center; padding: 20px; margin-top: 40px; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Arial, sans-serif; background:#fff; color:#111; }
+    header { background:#c62828; text-align:center; padding:20px; }
+    header a { color:#fff; text-decoration:none; font-size:20px; font-weight:bold; }
+    nav { background:#c62828; display:flex; justify-content:center; gap:20px; padding:10px 0; flex-wrap:wrap; }
+    nav a { color:#fff; text-decoration:none; font-weight:bold; padding:4px 8px; }
+    nav a.activo { text-decoration:underline; }
+
+    .hero { text-align:center; padding:30px 20px 10px; }
+    .hero h1 { margin:0; font-size:1.8rem; }
+    .hero p { color:#666; margin-top:6px; }
+
+    .countdown-box {
+      max-width:600px; margin:20px auto; background:#c62828; color:#fff;
+      border-radius:10px; padding:20px; text-align:center;
+    }
+    .countdown-box h2 { margin:0 0 4px; font-size:1.1rem; }
+    .countdown-box .circuito { font-size:0.9rem; opacity:0.9; margin-bottom:14px; }
+    .countdown-nums { display:flex; justify-content:center; gap:16px; }
+    .countdown-nums div { min-width:60px; }
+    .countdown-nums .num { font-size:2rem; font-weight:bold; }
+    .countdown-nums .lbl { font-size:0.75rem; text-transform:uppercase; opacity:0.85; }
+
+    .contenido { max-width:900px; margin:0 auto; padding:20px; }
+
+    .gp-card {
+      border:1px solid #eee; border-radius:8px; margin-bottom:14px; overflow:hidden;
+    }
+    .gp-card.finalizado { opacity:0.6; }
+    .gp-card.proximo { border-color:#c62828; box-shadow:0 0 0 2px #c62828 inset; }
+    .gp-cabecera {
+      display:flex; justify-content:space-between; align-items:center;
+      background:#f7f7f7; padding:10px 16px;
+    }
+    .gp-cabecera .ronda { font-weight:bold; color:#c62828; font-size:0.85rem; }
+    .gp-cabecera .pais { font-weight:bold; font-size:1.05rem; }
+    .gp-cabecera .fechas { font-size:0.85rem; color:#555; }
+    .etiqueta {
+      font-size:0.7rem; font-weight:bold; padding:2px 8px; border-radius:10px;
+      text-transform:uppercase;
+    }
+    .etiqueta.sprint { background:#111; color:#fff; }
+    .etiqueta.finalizada { background:#ddd; color:#555; }
+    .etiqueta.proxima { background:#c62828; color:#fff; }
+
+    .sesiones { display:flex; flex-wrap:wrap; gap:0; }
+    .sesion {
+      flex:1; min-width:110px; padding:10px 12px; border-top:1px solid #f0f0f0; border-right:1px solid #f0f0f0;
+    }
+    .sesion .tipo { font-size:0.75rem; color:#888; text-transform:uppercase; }
+    .sesion .dia-hora { font-size:0.85rem; font-weight:bold; }
+
+    .nota { color:#888; font-size:0.82rem; margin-top:16px; text-align:center; }
+    footer { background:#c62828; color:#fff; text-align:center; padding:20px; margin-top:40px; }
   </style>
+  <link rel="stylesheet" href="tema.css">
+  <script src="tema.js" defer></script>
 </head>
 <body>
   <header><a href="index.html">SUDOR Y GLORIA</a></header>
   <nav>
     <a href="motorsport.html">Noticias</a>
     <a href="motorsport-clasificacion.html">Clasificación</a>
-    <a href="motorsport-calendario.html">Calendario</a>
+    <a href="motorsport-calendario.html" class="activo">Calendario</a>
     <a href="motorsport-equipos.html">Equipos</a>
   </nav>
-  <div class="contenido">
-    <h2>Calendario F1 2025</h2>
-    <div class="evento">Australian GP</div>
-    <div class="evento">Chinese GP</div>
-    <div class="evento">British GP</div>
-    <div class="evento">Spanish GP</div>
-    <!-- Puedes seguir agregando carreras según el calendario oficial -->
+
+  <div class="hero">
+    <h1>Calendario F1 2026</h1>
+    <p>22 Grandes Premios · Temporada del 6 de marzo al 6 de diciembre</p>
   </div>
+
+  <div class="countdown-box">
+    <h2>Próxima carrera</h2>
+    <div class="circuito">Gran Premio de Países Bajos — Zandvoort</div>
+    <div class="countdown-nums">
+      <div><div class="num" id="cd-dias">--</div><div class="lbl">Días</div></div>
+      <div><div class="num" id="cd-horas">--</div><div class="lbl">Horas</div></div>
+      <div><div class="num" id="cd-min">--</div><div class="lbl">Min</div></div>
+      <div><div class="num" id="cd-seg">--</div><div class="lbl">Seg</div></div>
+    </div>
+  </div>
+
+  <div class="contenido">
+
+    <div class="gp-card finalizado">
+      <div class="gp-cabecera">
+        <div><span class="ronda">RONDA 1</span> — <span class="pais">🇦🇺 Australia · Melbourne</span></div>
+        <div><span class="etiqueta finalizada">Finalizada</span> <span class="fechas">6-8 marzo</span></div>
+      </div>
+    </div>
+
+    <div class="gp-card finalizado">
+      <div class="gp-cabecera">
+        <div><span class="ronda">RONDA 2</span> — <span class="pais">🇨🇳 China · Shanghái</span> <span class="etiqueta sprint">Sprint</span></div>
+        <div><span class="etiqueta finalizada">Finalizada</span> <span class="fechas">13-15 marzo</span></div>
+      </div>
+    </div>
+
+    <div class="gp-card finalizado">
+      <div class="gp-cabecera">
+        <div><span class="ronda">RONDA 3</span> — <span class="pais">🇯🇵 Japón · Suzuka</span></div>
+        <div><span class="etiqueta finalizada">Finalizada</span> <span class="fechas">27-29 marzo</span></div>
+      </div>
+    </div>
+
+    <div class="gp-card finalizado" style="opacity:0.4;">
+      <div class="gp-cabecera">
+        <div><span class="ronda">—</span> — <span class="pais">🇧🇭 Baréin — Cancelado (conflicto en Oriente Medio)</span></div>
+      </div>
+    </div>
+
+    <div class="gp-card finalizado" style="opacity:0.4;">
+      <div class="gp-cabecera">
+        <div><span class="ronda">—</span> — <span class="pais">🇸🇦 Arabia Saudita — Cancelado (conflicto en Oriente Medio)</span></div>
+      </div>
+    </div>
+
+    <div class="gp-card finalizado">
+      <div class="gp-cabecera">
+        <div><span class="ronda">RONDA 4</span> — <span class="pais">🇺🇸 Miami</span> <span class="etiqueta sprint">Sprint</span></div>
+        <div><span class="etiqueta finalizada">Finalizada</span> <span class="fechas">1-3 mayo</span></div>
+      </div>
+    </div>
+
+    <div class="gp-card finalizado">
+      <div class="gp-cabecera">
+        <div><span class="ronda">RONDA 5</span> — <span class="pais">🇨🇦 Canadá · Montreal</span> <span class="etiqueta sprint">Sprint</span></div>
+        <div><span class="etiqueta finalizada">Finalizada</span> <span class="fechas">22-24 mayo</span></div>
+      </div>
+    </div>
+
+    <div class="gp-card finalizado">
+      <div class="gp-cabecera">
+        <div><span class="ronda">RONDA 6</span> — <span class="pais">🇲🇨 Mónaco</span></div>
+        <div><span class="etiqueta finalizada">Finalizada</span> <span class="fechas">5-7 junio</span></div>
+      </div>
+    </div>
+
+    <div class="gp-card finalizado">
+      <div class="gp-cabecera">
+        <div><span class="ronda">RONDA 7</span> — <span class="pais">🇪🇸 España · Barcelona-Catalunya</span></div>
+        <div><span class="etiqueta finalizada">Finalizada</span> <span class="fechas">12-14 junio</span></div>
+      </div>
+    </div>
+
+    <div class="gp-card finalizado">
+      <div class="gp-cabecera">
+        <div><span class="ronda">RONDA 8</span> — <span class="pais">🇦🇹 Austria · Spielberg</span></div>
+        <div><span class="etiqueta finalizada">Finalizada</span> <span class="fechas">26-28 junio</span></div>
+      </div>
+    </div>
+
+    <div class="gp-card finalizado">
+      <div class="gp-cabecera">
+        <div><span class="ronda">RONDA 9</span> — <span class="pais">🇬🇧 Reino Unido · Silverstone</span> <span class="etiqueta sprint">Sprint</span></div>
+        <div><span class="etiqueta finalizada">Finalizada</span> <span class="fechas">3-5 julio</span></div>
+      </div>
+    </div>
+
+    <div class="gp-card finalizado">
+      <div class="gp-cabecera">
+        <div><span class="ronda">RONDA 10</span> — <span class="pais">🇧🇪 Bélgica · Spa-Francorchamps</span></div>
+        <div><span class="etiqueta finalizada">Finalizada</span> <span class="fechas">17-19 julio</span></div>
+      </div>
+    </div>
+
+    <div class="gp-card finalizado">
+      <div class="gp-cabecera">
+        <div><span class="ronda">RONDA 11</span> — <span class="pais">🇭🇺 Hungría · Budapest</span></div>
+        <div><span class="etiqueta finalizada">Finalizada</span> <span class="fechas">24-26 julio</span></div>
+      </div>
+    </div>
+
+    <div style="text-align:center; color:#c62828; font-weight:bold; margin:20px 0;">— Parón de verano —</div>
+
+    <div class="gp-card proximo">
+      <div class="gp-cabecera">
+        <div><span class="ronda">RONDA 12</span> — <span class="pais">🇳🇱 Países Bajos · Zandvoort</span> <span class="etiqueta sprint">Sprint</span></div>
+        <div><span class="etiqueta proxima">Próxima</span> <span class="fechas">21-23 agosto</span></div>
+      </div>
+      <div class="sesiones">
+        <div class="sesion"><div class="tipo">Libres 1</div><div class="dia-hora">Viernes 11:30</div></div>
+        <div class="sesion"><div class="tipo">Clasificación</div><div class="dia-hora">Viernes 15:00</div></div>
+        <div class="sesion"><div class="tipo">Sprint Qualy</div><div class="dia-hora">Sábado 11:30</div></div>
+        <div class="sesion"><div class="tipo">Carrera Sprint</div><div class="dia-hora">Sábado 16:00</div></div>
+        <div class="sesion"><div class="tipo">Carrera</div><div class="dia-hora">Domingo 15:00</div></div>
+      </div>
+    </div>
+
+    <div class="gp-card">
+      <div class="gp-cabecera">
+        <div><span class="ronda">RONDA 13</span> — <span class="pais">🇮🇹 Italia · Monza</span></div>
+        <div><span class="fechas">4-6 septiembre</span></div>
+      </div>
+      <div class="sesiones">
+        <div class="sesion"><div class="tipo">Libres 1</div><div class="dia-hora">Viernes 13:30</div></div>
+        <div class="sesion"><div class="tipo">Libres 2</div><div class="dia-hora">Viernes 17:00</div></div>
+        <div class="sesion"><div class="tipo">Libres 3</div><div class="dia-hora">Sábado 12:30</div></div>
+        <div class="sesion"><div class="tipo">Clasificación</div><div class="dia-hora">Sábado 16:00</div></div>
+        <div class="sesion"><div class="tipo">Carrera</div><div class="dia-hora">Domingo 15:00</div></div>
+      </div>
+    </div>
+
+    <div class="gp-card">
+      <div class="gp-cabecera">
+        <div><span class="ronda">RONDA 14</span> — <span class="pais">🇪🇸 España · Madrid (Madring) — circuito debutante</span></div>
+        <div><span class="fechas">11-13 septiembre</span></div>
+      </div>
+      <div class="sesiones">
+        <div class="sesion"><div class="tipo">Libres 1</div><div class="dia-hora">Viernes 13:30</div></div>
+        <div class="sesion"><div class="tipo">Libres 2</div><div class="dia-hora">Viernes 17:00</div></div>
+        <div class="sesion"><div class="tipo">Libres 3</div><div class="dia-hora">Sábado 12:30</div></div>
+        <div class="sesion"><div class="tipo">Clasificación</div><div class="dia-hora">Sábado 16:00</div></div>
+        <div class="sesion"><div class="tipo">Carrera</div><div class="dia-hora">Domingo 15:00</div></div>
+      </div>
+    </div>
+
+    <div class="gp-card">
+      <div class="gp-cabecera">
+        <div><span class="ronda">RONDA 15</span> — <span class="pais">🇦🇿 Azerbaiyán · Bakú</span></div>
+        <div><span class="fechas">25-27 septiembre</span></div>
+      </div>
+      <div class="sesiones">
+        <div class="sesion"><div class="tipo">Libres 1</div><div class="dia-hora">Viernes 12:30</div></div>
+        <div class="sesion"><div class="tipo">Libres 2</div><div class="dia-hora">Viernes 16:00</div></div>
+        <div class="sesion"><div class="tipo">Libres 3</div><div class="dia-hora">Sábado 11:30</div></div>
+        <div class="sesion"><div class="tipo">Clasificación</div><div class="dia-hora">Sábado 15:00</div></div>
+        <div class="sesion"><div class="tipo">Carrera</div><div class="dia-hora">Domingo 14:00</div></div>
+      </div>
+    </div>
+
+    <div class="gp-card">
+      <div class="gp-cabecera">
+        <div><span class="ronda">RONDA 16</span> — <span class="pais">🇸🇬 Singapur</span> <span class="etiqueta sprint">Sprint</span></div>
+        <div><span class="fechas">9-11 octubre</span></div>
+      </div>
+      <div class="sesiones">
+        <div class="sesion"><div class="tipo">Libres 1</div><div class="dia-hora">Viernes 13:30</div></div>
+        <div class="sesion"><div class="tipo">Clasificación</div><div class="dia-hora">Viernes 17:00</div></div>
+        <div class="sesion"><div class="tipo">Sprint Qualy</div><div class="dia-hora">Sábado 13:30</div></div>
+        <div class="sesion"><div class="tipo">Carrera Sprint</div><div class="dia-hora">Sábado 17:00</div></div>
+        <div class="sesion"><div class="tipo">Carrera</div><div class="dia-hora">Domingo 14:00</div></div>
+      </div>
+    </div>
+
+    <div class="gp-card">
+      <div class="gp-cabecera">
+        <div><span class="ronda">RONDA 17</span> — <span class="pais">🇺🇸 Estados Unidos · Austin</span></div>
+        <div><span class="fechas">23-25 octubre</span></div>
+      </div>
+      <div class="sesiones">
+        <div class="sesion"><div class="tipo">Libres 1</div><div class="dia-hora">Viernes 20:30</div></div>
+        <div class="sesion"><div class="tipo">Libres 2</div><div class="dia-hora">Viernes 23:30</div></div>
+        <div class="sesion"><div class="tipo">Libres 3</div><div class="dia-hora">Sábado 19:30</div></div>
+        <div class="sesion"><div class="tipo">Clasificación</div><div class="dia-hora">Sábado 23:00</div></div>
+        <div class="sesion"><div class="tipo">Carrera</div><div class="dia-hora">Domingo 21:00</div></div>
+      </div>
+    </div>
+
+    <div class="gp-card">
+      <div class="gp-cabecera">
+        <div><span class="ronda">RONDA 18</span> — <span class="pais">🇲🇽 México · Ciudad de México</span></div>
+        <div><span class="fechas">30 oct - 1 nov</span></div>
+      </div>
+      <div class="sesiones">
+        <div class="sesion"><div class="tipo">Libres 1</div><div class="dia-hora">Viernes 20:30</div></div>
+        <div class="sesion"><div class="tipo">Libres 2</div><div class="dia-hora">Viernes 23:30</div></div>
+        <div class="sesion"><div class="tipo">Libres 3</div><div class="dia-hora">Sábado 19:30</div></div>
+        <div class="sesion"><div class="tipo">Clasificación</div><div class="dia-hora">Sábado 23:00</div></div>
+        <div class="sesion"><div class="tipo">Carrera</div><div class="dia-hora">Domingo 21:00</div></div>
+      </div>
+    </div>
+
+    <div class="gp-card">
+      <div class="gp-cabecera">
+        <div><span class="ronda">RONDA 19</span> — <span class="pais">🇧🇷 Brasil · São Paulo</span></div>
+        <div><span class="fechas">6-8 noviembre</span></div>
+      </div>
+      <div class="sesiones">
+        <div class="sesion"><div class="tipo">Libres 1</div><div class="dia-hora">Viernes 15:30</div></div>
+        <div class="sesion"><div class="tipo">Libres 2</div><div class="dia-hora">Viernes 19:30</div></div>
+        <div class="sesion"><div class="tipo">Libres 3</div><div class="dia-hora">Sábado 14:30</div></div>
+        <div class="sesion"><div class="tipo">Clasificación</div><div class="dia-hora">Sábado 18:00</div></div>
+        <div class="sesion"><div class="tipo">Carrera</div><div class="dia-hora">Domingo 17:00</div></div>
+      </div>
+    </div>
+
+    <div class="gp-card">
+      <div class="gp-cabecera">
+        <div><span class="ronda">RONDA 20</span> — <span class="pais">🇺🇸 Las Vegas</span></div>
+        <div><span class="fechas">19-21 noviembre</span></div>
+      </div>
+      <div class="sesiones">
+        <div class="sesion"><div class="tipo">Libres 1</div><div class="dia-hora">Vie 04:30 (Sáb madr.)</div></div>
+        <div class="sesion"><div class="tipo">Libres 2</div><div class="dia-hora">Vie 08:00 (Sáb madr.)</div></div>
+        <div class="sesion"><div class="tipo">Libres 3</div><div class="dia-hora">Sáb 04:30 (Dom madr.)</div></div>
+        <div class="sesion"><div class="tipo">Clasificación</div><div class="dia-hora">Sáb 08:00 (Dom madr.)</div></div>
+        <div class="sesion"><div class="tipo">Carrera</div><div class="dia-hora">Sáb-Dom 07:00 madr.</div></div>
+      </div>
+    </div>
+
+    <div class="gp-card">
+      <div class="gp-cabecera">
+        <div><span class="ronda">RONDA 21</span> — <span class="pais">🇶🇦 Catar · Lusail</span></div>
+        <div><span class="fechas">27-29 noviembre</span></div>
+      </div>
+      <div class="sesiones">
+        <div class="sesion"><div class="tipo">Libres 1</div><div class="dia-hora">Viernes 15:30</div></div>
+        <div class="sesion"><div class="tipo">Libres 2</div><div class="dia-hora">Viernes 19:30</div></div>
+        <div class="sesion"><div class="tipo">Libres 3</div><div class="dia-hora">Sábado 15:30</div></div>
+        <div class="sesion"><div class="tipo">Clasificación</div><div class="dia-hora">Sábado 19:00</div></div>
+        <div class="sesion"><div class="tipo">Carrera</div><div class="dia-hora">Domingo 18:00</div></div>
+      </div>
+    </div>
+
+    <div class="gp-card">
+      <div class="gp-cabecera">
+        <div><span class="ronda">RONDA 22</span> — <span class="pais">🇦🇪 Abu Dabi · Yas Marina — Final de temporada</span></div>
+        <div><span class="fechas">4-6 diciembre</span></div>
+      </div>
+      <div class="sesiones">
+        <div class="sesion"><div class="tipo">Libres 1</div><div class="dia-hora">Viernes 13:30</div></div>
+        <div class="sesion"><div class="tipo">Libres 2</div><div class="dia-hora">Viernes 17:00</div></div>
+        <div class="sesion"><div class="tipo">Libres 3</div><div class="dia-hora">Sábado 14:30</div></div>
+        <div class="sesion"><div class="tipo">Clasificación</div><div class="dia-hora">Sábado 18:00</div></div>
+        <div class="sesion"><div class="tipo">Carrera</div><div class="dia-hora">Domingo 17:00</div></div>
+      </div>
+    </div>
+
+    <p class="nota">Fechas verificadas (calendario oficial FIA 2026, sin Baréin ni Arabia Saudita). Los horarios de sesión están en hora peninsular española y son orientativos: confírmalos en la web oficial de F1 la semana de cada carrera, ya que pueden variar ligeramente por circuito.</p>
+  </div>
+
   <footer>
     Contacto: contacto@sudorygloria.com — Síguenos: Twitter | Instagram | Facebook
   </footer>
+
+  <script>
+    // Carrera de Países Bajos (Zandvoort): domingo 23 de agosto de 2026, 15:00 hora peninsular española (CEST, UTC+2)
+    const fechaCarrera = new Date("2026-08-23T15:00:00+02:00").getTime();
+
+    function actualizarContador() {
+      const ahora = new Date().getTime();
+      const restante = fechaCarrera - ahora;
+
+      if (restante < 0) {
+        document.getElementById('cd-dias').textContent = "0";
+        document.getElementById('cd-horas').textContent = "0";
+        document.getElementById('cd-min').textContent = "0";
+        document.getElementById('cd-seg').textContent = "0";
+        return;
+      }
+
+      const dias = Math.floor(restante / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((restante % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((restante % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((restante % (1000 * 60)) / 1000);
+
+      document.getElementById('cd-dias').textContent = dias;
+      document.getElementById('cd-horas').textContent = horas;
+      document.getElementById('cd-min').textContent = minutos;
+      document.getElementById('cd-seg').textContent = segundos;
+    }
+
+    actualizarContador();
+    setInterval(actualizarContador, 1000);
+  </script>
 </body>
 </html>

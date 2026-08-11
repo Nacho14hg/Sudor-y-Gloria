@@ -17,10 +17,46 @@
       width: auto;
       object-fit: contain;
     }
+    .escudos a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 60px;
+      text-decoration: none;
+    }
+    .escudos .badge-texto {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      background: #c0392b;
+      color: #fff;
+      font-size: 11px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      line-height: 1;
+    }
+    .escudos span.nombre {
+      font-size: 10px;
+      color: #333;
+      margin-top: 2px;
+      text-align: center;
+    }
+    .liga-titulo {
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      color: #c0392b;
+    }
     footer {
       margin-top: 40px;
     }
   </style>
+  <link rel="stylesheet" href="tema.css">
+  <script src="tema.js" defer></script>
 </head>
 <body class="bg-white text-black">
 
@@ -31,56 +67,59 @@
     </h1>
   </header>
 
-  <!-- Primera División -->
+  <!-- Primera División 2026-27 -->
   <section class="py-4 bg-white">
+    <p class="liga-titulo">LALIGA EA SPORTS 2026-27</p>
     <div class="escudos">
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Real_Madrid_CF.svg/512px-Real_Madrid_CF.svg.png" alt="Real Madrid"></a>
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/FC_Barcelona_%28crest%29.svg/512px-FC_Barcelona_%28crest%29.svg.png" alt="FC Barcelona"></a>
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Atletico_Madrid_2017_logo.svg/512px-Atletico_Madrid_2017_logo.svg.png" alt="Atlético de Madrid"></a>
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Sevilla_FC_logo.svg/512px-Sevilla_FC_logo.svg.png" alt="Sevilla"></a>
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Real_betis_logo.svg/512px-Real_betis_logo.svg.png" alt="Betis"></a>
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Real_Sociedad_logo.svg/512px-Real_Sociedad_logo.svg.png" alt="Real Sociedad"></a>
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Villarreal_CF_logo.svg/512px-Villarreal_CF_logo.svg.png" alt="Villarreal"></a>
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Athletic_Bilbao_logo.svg/512px-Athletic_Bilbao_logo.svg.png" alt="Athletic Club"></a>
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Valencia_CF_logo.svg/512px-Valencia_CF_logo.svg.png" alt="Valencia"></a>
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/CA_Osasuna_logo.svg/512px-CA_Osasuna_logo.svg.png" alt="Osasuna"></a>
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Rc_celta_de_vigo_logo.svg/512px-Rc_celta_de_vigo_logo.svg.png" alt="Celta de Vigo"></a>
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Rayo_Vallecano_logo.svg/512px-Rayo_Vallecano_logo.svg.png" alt="Rayo Vallecano"></a>
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Deportivo_Alaves_logo.svg/512px-Deportivo_Alaves_logo.svg.png" alt="Alavés"></a>
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Rcd_espanyol_logo.svg/512px-Rcd_espanyol_logo.svg.png" alt="RCD Espanyol"></a>
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Elche_CF_logo.svg/512px-Elche_CF_logo.svg.png" alt="Elche"></a>
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Getafe_CF_logo.svg/512px-Getafe_CF_logo.svg.png" alt="Getafe"></a>
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Rcd_mallorca.svg/512px-Rcd_mallorca.svg.png" alt="Mallorca"></a>
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Levante_ud_logo.svg/512px-Levante_ud_logo.svg.png" alt="Levante UD"></a>
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Real_Oviedo_logo.svg/512px-Real_Oviedo_logo.svg.png" alt="Real Oviedo"></a>
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Logo_of_Girona_FC.svg/512px-Logo_of_Girona_FC.svg.png" alt="Girona"></a>
+      <a href="equipo.html?id=athletic-club"><img src="imgescudos/Athletic-club.png" onerror="this.style.display='none'" alt="Athletic Club"></a>
+      <a href="equipo.html?id=atletico-madrid"><img src="imgescudos/Atletico-de-madrid.png" onerror="this.style.display='none'" alt="Atlético de Madrid"></a>
+      <a href="equipo.html?id=osasuna"><img src="imgescudos/osasuna.png" onerror="this.style.display='none'" alt="CA Osasuna"></a>
+      <a href="equipo.html?id=alaves"><img src="imgescudos/Alaves.png" onerror="this.style.display='none'" alt="Deportivo Alavés"></a>
+      <a href="equipo.html?id=elche"><img src="imgescudos/Elche.png" onerror="this.style.display='none'" alt="Elche CF"></a>
+      <a href="equipo.html?id=barcelona"><img src="imgescudos/Barcelona.png" onerror="this.style.display='none'" alt="FC Barcelona"></a>
+      <a href="equipo.html?id=getafe"><img src="imgescudos/Getafe.png" onerror="this.style.display='none'" alt="Getafe CF"></a>
+      <a href="equipo.html?id=levante"><img src="imgescudos/Levante.png" onerror="this.style.display='none'" alt="Levante UD"></a>
+      <a href="equipo.html?id=malaga"><img src="imgescudos/Malaga.png" onerror="this.style.display='none'" alt="Málaga CF"></a>
+      <a href="equipo.html?id=rayo-vallecano"><img src="imgescudos/Rayo-vallecano.png" onerror="this.style.display='none'" alt="Rayo Vallecano"></a>
+      <a href="equipo.html?id=celta"><img src="imgescudos/Celta.png" onerror="this.style.display='none'" alt="RC Celta de Vigo"></a>
+      <a href="equipo.html?id=deportivo"><img src="imgescudos/Deportivo.png" onerror="this.style.display='none'" alt="RC Deportivo de La Coruña"></a>
+      <a href="equipo.html?id=espanyol"><img src="imgescudos/Espanyol.png" onerror="this.style.display='none'" alt="RCD Espanyol"></a>
+      <a href="equipo.html?id=real-betis"><img src="imgescudos/Betis.png" onerror="this.style.display='none'" alt="Real Betis"></a>
+      <a href="equipo.html?id=real-madrid"><img src="imgescudos/Real-madrid.png" onerror="this.style.display='none'" alt="Real Madrid"></a>
+      <a href="equipo.html?id=racing-santander"><img src="imgescudos/Racing-santander.png" onerror="this.style.display='none'" alt="Real Racing Club de Santander"></a>
+      <a href="equipo.html?id=real-sociedad"><img src="imgescudos/Real-Sociedad.png" onerror="this.style.display='none'" alt="Real Sociedad"></a>
+      <a href="equipo.html?id=sevilla"><img src="imgescudos/Sevilla.png" onerror="this.style.display='none'" alt="Sevilla FC"></a>
+      <a href="equipo.html?id=valencia"><img src="imgescudos/Valencia.png" onerror="this.style.display='none'" alt="Valencia CF"></a>
+      <a href="equipo.html?id=villarreal"><img src="imgescudos/Villarreal.png" onerror="this.style.display='none'" alt="Villarreal CF"></a>
     </div>
   </section>
 
-  <!-- Segunda División -->
+  <!-- Segunda División (LALIGA Hypermotion) 2026-27 -->
   <section class="py-4 border-t bg-white">
+    <p class="liga-titulo">LALIGA HYPERMOTION 2026-27</p>
     <div class="escudos">
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/AD_Ceuta_FC_logo.svg/512px-AD_Ceuta_FC_logo.svg.png" alt="AD Ceuta"></a>
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Albacete_Balompi%C3%A9_logo.svg/512px-Albacete_Balompi%C3%A9_logo.svg.png" alt="Albacete"></a>
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Burgos_CF_logo.svg/512px-Burgos_CF_logo.svg.png" alt="Burgos"></a>
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/CD_Castell%C3%B3n_logo.svg/512px-CD_Castell%C3%B3n_logo.svg.png" alt="Castellón"></a>
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Cultural_Leonesa_logo.svg/512px-Cultural_Leonesa_logo.svg.png" alt="Cultural Leonesa"></a>
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/CD_Legan%C3%A9s_logo.svg/512px-CD_Legan%C3%A9s_logo.svg.png" alt="CD Leganés"></a>
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/CD_Mirand%C3%A9s_logo.svg/512px-CD_Mirand%C3%A9s_logo.svg.png" alt="CD Mirandés"></a>
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/C%C3%A1diz_CF_logo.svg/512px-C%C3%A1diz_CF_logo.svg.png" alt="Cádiz"></a>
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/C%C3%B3rdoba_CF_logo.svg/512px-C%C3%B3rdoba_CF_logo.svg.png" alt="Córdoba"></a>
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/FC_Andorra_logo.svg/512px-FC_Andorra_logo.svg.png" alt="FC Andorra"></a>
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Granada_CF_logo.svg/512px-Granada_CF_logo.svg.png" alt="Granada"></a>
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/M%C3%A1laga_CF_logo.svg/512px-M%C3%A1laga_CF_logo.svg.png" alt="Málaga"></a>
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Real_Racing_Club_de_Santander_logo.svg/512px-Real_Racing_Club_de_Santander_logo.svg.png" alt="Racing Santander"></a>
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/RC_Deportivo_de_La_Coru%C3%B1a_logo.svg/512px-RC_Deportivo_de_La_Coru%C3%B1a_logo.svg.png" alt="RC Deportivo"></a>
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Real_Sporting_de_Gij%C3%B3n_logo.svg/512px-Real_Sporting_de_Gij%C3%B3n_logo.svg.png" alt="Real Sporting"></a>
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Real_Zaragoza_logo.svg/512px-Real_Zaragoza_logo.svg.png" alt="Real Zaragoza"></a>
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/SD_Eibar_logo.svg/512px-SD_Eibar_logo.svg.png" alt="SD Eibar"></a>
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/SD_Huesca_logo.svg/512px-SD_Huesca_logo.svg.png" alt="SD Huesca"></a>
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/UD_Almer%C3%ADa_logo.svg/512px-UD_Almer%C3%ADa_logo.svg.png" alt="UD Almería"></a>
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Real_Sociedad_B_logo.svg/512px-Real_Sociedad_B_logo.svg.png" alt="Real Sociedad B"></a>
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/UD_Las_Palmas_logo.svg/512px-UD_Las_Palmas_logo.svg.png" alt="UD Las Palmas"></a>
+      <a href="equipo.html?id=ceuta"><img src="imgescudos/Ceuta.png" onerror="this.style.display='none'" alt="AD Ceuta FC"></a>
+      <a href="equipo.html?id=albacete"><img src="imgescudos/Albacete.png" onerror="this.style.display='none'" alt="UD Albacete Balompié"></a>
+      <a href="equipo.html?id=burgos"><img src="imgescudos/Burgos.png" onerror="this.style.display='none'" alt="Burgos CF"></a>
+      <a href="equipo.html?id=cadiz"><img src="imgescudos/Cadiz.png" onerror="this.style.display='none'" alt="Cádiz CF"></a>
+      <a href="equipo.html?id=castellon"><img src="imgescudos/Castellon.png" onerror="this.style.display='none'" alt="CD Castellón"></a>
+      <a href="equipo.html?id=eldense"><img src="imgescudos/eldense.png" onerror="this.style.display='none'" alt="CD Eldense"></a>
+      <a href="equipo.html?id=leganes"><img src="imgescudos/Leganes.png" onerror="this.style.display='none'" alt="CD Leganés"></a>
+      <a href="equipo.html?id=tenerife"><img src="imgescudos/tenerife.png" onerror="this.style.display='none'" alt="CD Tenerife"></a>
+      <a href="equipo.html?id=sabadell"><img src="imgescudos/sabadell.png" onerror="this.style.display='none'" alt="CE Sabadell FC"></a>
+      <a href="equipo.html?id=cordoba"><img src="imgescudos/Cordoba.png" onerror="this.style.display='none'" alt="Córdoba CF"></a>
+      <a href="equipo.html?id=andorra"><img src="imgescudos/Andorra.png" onerror="this.style.display='none'" alt="FC Andorra"></a>
+      <a href="equipo.html?id=girona"><img src="imgescudos/Girona.png" onerror="this.style.display='none'" alt="Girona FC"></a>
+      <a href="equipo.html?id=granada"><img src="imgescudos/Granada.png" onerror="this.style.display='none'" alt="Granada CF"></a>
+      <a href="equipo.html?id=celta-fortuna"><img src="imgescudos/Celta.png" onerror="this.style.display='none'" alt="RC Celta Fortuna"></a>
+      <a href="equipo.html?id=mallorca"><img src="imgescudos/Mallorca.png" onerror="this.style.display='none'" alt="RCD Mallorca"></a>
+      <a href="equipo.html?id=oviedo"><img src="imgescudos/Real-oviedo.png" onerror="this.style.display='none'" alt="Real Oviedo"></a>
+      <a href="equipo.html?id=real-sociedad-b"><img src="imgescudos/Real-sociedad-b.png" onerror="this.style.display='none'" alt="Real Sociedad B"></a>
+      <a href="equipo.html?id=sporting"><img src="imgescudos/Real-sporting.png" onerror="this.style.display='none'" alt="Real Sporting de Gijón"></a>
+      <a href="equipo.html?id=valladolid"><img src="imgescudos/Valladolid.png" onerror="this.style.display='none'" alt="Real Valladolid"></a>
+      <a href="equipo.html?id=eibar"><img src="imgescudos/Eibar.png" onerror="this.style.display='none'" alt="SD Eibar"></a>
+      <a href="equipo.html?id=almeria"><img src="imgescudos/UD-Almería.png" onerror="this.style.display='none'" alt="UD Almería"></a>
+      <a href="equipo.html?id=las-palmas"><img src="imgescudos/Las-palmas.png" onerror="this.style.display='none'" alt="UD Las Palmas"></a>
     </div>
   </section>
 

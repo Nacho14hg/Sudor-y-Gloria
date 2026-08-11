@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title id="titulo-pagina">Equipo | Sudor y Gloria</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Arial, sans-serif; background:#fff; color:#000; }
+    header { background:#c62828; text-align:center; padding:20px; }
+    header a { color:#fff; text-decoration:none; font-size:20px; font-weight:bold; }
+    .club-header { display:flex; align-items:center; gap:20px; max-width:900px; margin:20px auto; padding:0 20px; }
+    .club-header img { width:80px; height:80px; object-fit:contain; }
+    .club-header .badge-texto {
+      width:80px; height:80px; border-radius:50%; background:#c62828; color:#fff;
+      display:flex; align-items:center; justify-content:center; text-align:center;
+      font-weight:bold; font-size:0.8rem; flex-shrink:0;
+    }
+    .club-header h1 { font-size:1.5rem; margin:0; }
+    .club-header p { margin:4px 0 0; color:#555; font-size:0.9rem; }
+    nav.tabs { background:#111; display:flex; justify-content:center; flex-wrap:wrap; }
+    nav.tabs button {
+      color:#fff; background:none; border:none; cursor:pointer; font-weight:bold;
+      padding:12px 16px; font-size:0.85rem; font-family:inherit;
+    }
+    nav.tabs button.activo, nav.tabs button:hover { background:#c62828; }
+    .contenido { padding:20px; max-width:900px; margin:auto; min-height:300px; }
+    .panel { display:none; }
+    .panel.activo { display:block; }
+    .noticia { padding:12px 0; border-bottom:1px solid #ddd; }
+    table.ficha { width:100%; border-collapse:collapse; }
+    table.ficha td { padding:10px; border-bottom:1px solid #ddd; }
+    table.ficha td:first-child { font-weight:bold; width:200px; color:#333; }
+    table.generica { width:100%; border-collapse:collapse; font-size:0.9rem; }
+    table.generica th, table.generica td { border:1px solid #ddd; padding:8px; text-align:left; }
+    table.generica th { background:#f0f0f0; }
+    .titulo-fila { display:flex; align-items:center; gap:14px; padding:12px 0; border-bottom:1px solid #eee; }
+    .trofeo { font-size:1.6rem; width:40px; text-align:center; flex-shrink:0; }
+    .nota { color:#777; font-size:0.85rem; margin-top:12px; }
+    footer { background:#c62828; color:#fff; text-align:center; padding:20px; margin-top:40px; }
+    .no-encontrado { text-align:center; padding:60px 20px; }
+  </style>
+  <link rel="stylesheet" href="tema.css">
+  <script src="tema.js" defer></script>
+</head>
+<body>
+  <header><a href="index.html">SUDOR Y GLORIA</a></header>
+
+  <div id="app"></div>
+
+  <footer>
+    Contacto: contacto@sudorygloria.com — Síguenos: Twitter | Instagram | Facebook
+  </footer>
+
+  <script src="equipos-data.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    const equipo = EQUIPOS[id];
+    const app = document.getElementById('app');
+
+    if (!equipo) {
+      app.innerHTML = `<div class="no-encontrado">
+        <h2>Equipo no encontrado</h2>
+        <p>No hemos encontrado datos para "${id || ''}". <a href="futbol.html">Volver a Fútbol</a></p>
+      </div>`;
+    } else {
+      document.getElementById('titulo-pagina').textContent = equipo.nombre + ' | Sudor y Gloria';
+
+      const escudoHtml = equipo.escudoLocal
+        ? `<img src="${equipo.escudoLocal}" alt="${equipo.nombre}" onerror="this.onerror=null;this.replaceWith(Object.assign(document.createElement('div'),{className:'badge-texto',textContent:'${equipo.nombre.split(' ').map(w=>w[0]).join('').slice(0,4)}'}));">`
+        : equipo.escudo
+        ? `<img src="https://commons.wikimedia.org/wiki/Special:FilePath/${equipo.escudo}?width=100" alt="${equipo.nombre}">`
+        : `<div class="badge-texto">${equipo.nombre.split(' ').map(w=>w[0]).join('').slice(0,4)}</div>`;
+
+      app.innerHTML = `
+        <div class="club-header">
+          ${escudoHtml}
+          <div>
+            <h1>${equipo.nombre}</h1>
+            <p>${equipo.division === 'Primera' ? 'LALIGA EA Sports' : 'LALIGA Hypermotion'} 2026-27 · ${equipo.estadio} · Fundado en ${equipo.fundacion}</p>
+          </div>
+        </div>
+
+        <nav class="tabs">
+          <button class="activo" data-tab="noticias">Noticias</button>
+          <button data-tab="ficha">Ficha</button>
+          <button data-tab="calendario">Calendario</button>
+          <button data-tab="estadisticas">Estadísticas</button>
+          <button data-tab="plantilla">Plantilla</button>
+          <button data-tab="clasificacion">Clasificación</button>
+          <button data-tab="palmares">Palmarés</button>
+        </nav>
+
+        <div class="contenido">
+
+          <div class="panel activo" id="panel-noticias">
+            <h2>Últimas noticias</h2>
+            <div class="noticia"><p>${equipo.noticia}</p></div>
+            <div class="noticia"><p>El club sigue trabajando en su planificación deportiva de cara al arranque de la temporada 2026-27, el 15-16 de agosto.</p></div>
+          </div>
+
+          <div class="panel" id="panel-ficha">
+            <h2>Ficha del club</h2>
+            <table class="ficha">
+              <tr><td>Nombre completo</td><td>${equipo.nombre}</td></tr>
+              <tr><td>Fundación</td><td>${equipo.fundacion}</td></tr>
+              <tr><td>Estadio</td><td>${equipo.estadio}</td></tr>
+              <tr><td>Ciudad</td><td>${equipo.ciudad}</td></tr>
+              <tr><td>Apodo</td><td>${equipo.apodo}</td></tr>
+              <tr><td>Competición 2026-27</td><td>${equipo.division === 'Primera' ? 'LALIGA EA Sports' : 'LALIGA Hypermotion'}</td></tr>
+              <tr><td>Entrenador</td><td>Por confirmar</td></tr>
+            </table>
+          </div>
+
+          <div class="panel" id="panel-calendario">
+            <h2>Calendario 2026-27</h2>
+            <table class="generica">
+              <tr><th>Jornada</th><th>Partido</th><th>Fecha</th></tr>
+              <tr><td>1</td><td>${equipo.nombre} vs. Por confirmar</td><td>15-16 agosto 2026</td></tr>
+              <tr><td>2</td><td>Por confirmar vs. ${equipo.nombre}</td><td>22-23 agosto 2026</td></tr>
+              <tr><td>3</td><td>${equipo.nombre} vs. Por confirmar</td><td>29-30 agosto 2026</td></tr>
+            </table>
+            <p class="nota">El calendario completo se publica tras el sorteo oficial de LALIGA; sustituye esta tabla por las jornadas reales en cuanto se confirmen.</p>
+          </div>
+
+          <div class="panel" id="panel-estadisticas">
+            <h2>Estadísticas</h2>
+            <p class="nota">Las estadísticas de la temporada 2026-27 se irán actualizando jornada a jornada una vez arranque la competición.</p>
+          </div>
+
+          <div class="panel" id="panel-plantilla">
+            <h2>Plantilla 2026-27</h2>
+            <table class="generica">
+              <tr><th>Dorsal</th><th>Jugador</th><th>Posición</th></tr>
+              <tr><td>1</td><td>Por confirmar</td><td>Portero</td></tr>
+              <tr><td>4</td><td>Por confirmar</td><td>Defensa</td></tr>
+              <tr><td>8</td><td>Por confirmar</td><td>Centrocampista</td></tr>
+              <tr><td>9</td><td>Por confirmar</td><td>Delantero</td></tr>
+            </table>
+            <p class="nota">La plantilla oficial se confirma con el cierre del mercado de fichajes de verano.</p>
+          </div>
+
+          <div class="panel" id="panel-clasificacion">
+            <h2>Clasificación ${equipo.division === 'Primera' ? 'LALIGA EA Sports' : 'LALIGA Hypermotion'} 2026-27</h2>
+            <table class="generica">
+              <tr><th>#</th><th>Equipo</th><th>Pts</th></tr>
+              <tr><td>1</td><td>Por disputar</td><td>0</td></tr>
+              <tr style="background:#fdecea; font-weight:bold;"><td>—</td><td>${equipo.nombre}</td><td>0</td></tr>
+              <tr><td>${equipo.division === 'Primera' ? '20' : '22'}</td><td>Por disputar</td><td>0</td></tr>
+            </table>
+            <p class="nota">La tabla se rellenará jornada a jornada desde el inicio de la temporada.</p>
+          </div>
+
+          <div class="panel" id="panel-palmares">
+            <h2>Palmarés</h2>
+            ${equipo.palmares.map(t => `<div class="titulo-fila"><div class="trofeo">🏆</div><div>${t}</div></div>`).join('')}
+            <p class="nota">Fuente: histórico verificado. Para el detalle completo año a año, consulta Wikipedia o LaLiga.com.</p>
+          </div>
+
+        </div>
+      `;
+
+      // Lógica de pestañas
+      document.querySelectorAll('nav.tabs button').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('nav.tabs button').forEach(b => b.classList.remove('activo'));
+          document.querySelectorAll('.panel').forEach(p => p.classList.remove('activo'));
+          btn.classList.add('activo');
+          document.getElementById('panel-' + btn.dataset.tab).classList.add('activo');
+        });
+      });
+    }
+  </script>
+</body>
+</html>

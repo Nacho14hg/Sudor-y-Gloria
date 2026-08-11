@@ -1,0 +1,85 @@
+/* tema.css — Selector de tema claro/oscuro para Sudor y Gloria */
+
+#toggle-tema {
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+  z-index: 9999;
+  background: #c62828;
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 10px 16px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.35);
+}
+#toggle-tema:hover { opacity: 0.9; }
+
+/* ===== Modo oscuro ===== */
+body.tema-oscuro {
+  background: #121212 !important;
+  color: #e8e8e8 !important;
+}
+
+/* Cabecera, menús y pie: mismo rojo pero algo más oscuro para no deslumbrar */
+body.tema-oscuro header,
+body.tema-oscuro nav,
+body.tema-oscuro nav.tabs,
+body.tema-oscuro footer {
+  background: #8f1f1f !important;
+}
+
+/* Tailwind (index.html, nba.html, opinion.html, piastri-zandvoort.html) */
+body.tema-oscuro .bg-white { background: #121212 !important; }
+body.tema-oscuro .bg-gray-100 { background: #1a1a1a !important; }
+body.tema-oscuro .text-black,
+body.tema-oscuro .text-gray-900 { color: #e8e8e8 !important; }
+body.tema-oscuro .text-gray-700,
+body.tema-oscuro .text-gray-500 { color: #bbbbbb !important; }
+body.tema-oscuro .border-t,
+body.tema-oscuro .border-b { border-color: #333 !important; }
+
+/* Enlaces */
+body.tema-oscuro a { color: #ff8a80; }
+body.tema-oscuro a.text-blue-600 { color: #82b1ff !important; }
+
+/* Tarjetas y bloques con fondo claro en las páginas hechas a medida */
+body.tema-oscuro .dato,
+body.tema-oscuro .stat-card,
+body.tema-oscuro .piloto-card,
+body.tema-oscuro .noticia,
+body.tema-oscuro .torneo,
+body.tema-oscuro .fila,
+body.tema-oscuro .gp-card,
+body.tema-oscuro .team-card,
+body.tema-oscuro .countdown-box,
+body.tema-oscuro .club-header,
+body.tema-oscuro .titulo-fila {
+  background: #1e1e1e !important;
+  color: #e8e8e8 !important;
+  border-color: #333 !important;
+}
+
+/* Tablas */
+body.tema-oscuro table { background: #1a1a1a !important; color: #e8e8e8 !important; }
+body.tema-oscuro table th { background: #2a2a2a !important; color: #fff !important; border-color: #333 !important; }
+body.tema-oscuro table td { border-color: #333 !important; }
+body.tema-oscuro table tr:nth-child(even) { background: #232323 !important; }
+body.tema-oscuro table tr.top10,
+body.tema-oscuro tr.destacado { background: #3a1f1f !important; }
+
+/* Textos secundarios / notas */
+body.tema-oscuro .nota,
+body.tema-oscuro .equipo,
+body.tema-oscuro .lugar,
+body.tema-oscuro .veces { color: #999 !important; }
+
+/* Escudos y grid de fútbol/NBA */
+body.tema-oscuro .escudos { background: #121212 !important; }
+
+/* Pestañas activas siguen destacando en rojo */
+body.tema-oscuro nav.tabs button.activo,
+body.tema-oscuro nav.tabs a.activo { background: #c62828 !important; }

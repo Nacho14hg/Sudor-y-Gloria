@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calendario ATP 2026 | Sudor y Gloria</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Arial, sans-serif; background:#fff; color:#000; }
+    header { background:#c62828; text-align:center; padding:20px; }
+    header a { color:#fff; text-decoration:none; font-size:20px; font-weight:bold; }
+    nav { background:#c62828; display:flex; justify-content:center; gap:20px; padding:10px 0; flex-wrap:wrap; }
+    nav a { color:#fff; text-decoration:none; font-weight:bold; }
+    .hero { text-align:center; padding:24px 20px 10px; }
+    .hero h1 { margin:0; font-size:1.7rem; }
+    .hero p { color:#666; margin-top:6px; }
+    .contenido { max-width:900px; margin:0 auto; padding:10px 16px 30px; }
+
+    .torneo {
+      display:flex; justify-content:space-between; align-items:center; gap:10px;
+      border:1px solid #eee; border-left:5px solid #ccc; border-radius:6px;
+      padding:10px 14px; margin-bottom:8px;
+    }
+    .torneo.finalizado { opacity:0.55; }
+    .torneo.grandslam { border-left-color:#c62828; background:#fdf3f3; }
+    .torneo.m1000 { border-left-color:#111; }
+    .torneo.a500 { border-left-color:#c62828; }
+    .torneo.a250 { border-left-color:#999; }
+    .torneo.especial { border-left-color:#0a7a3d; }
+
+    .t-info .nombre { font-weight:bold; }
+    .t-info .lugar { font-size:0.82rem; color:#666; }
+    .t-fecha { font-size:0.85rem; font-weight:bold; text-align:right; min-width:110px; }
+    .etiqueta {
+      font-size:0.65rem; font-weight:bold; padding:2px 7px; border-radius:10px; color:#fff;
+      text-transform:uppercase; margin-left:6px;
+    }
+    .etiqueta.grandslam { background:#c62828; }
+    .etiqueta.m1000 { background:#111; }
+    .etiqueta.a500 { background:#c62828; }
+    .etiqueta.a250 { background:#999; }
+    .etiqueta.especial { background:#0a7a3d; }
+
+    .mes-sep { color:#c62828; font-weight:bold; margin:22px 0 8px; border-bottom:2px solid #c62828; padding-bottom:4px; }
+
+    .nota { color:#888; font-size:0.82rem; margin-top:16px; text-align:center; }
+    footer { background:#c62828; color:#fff; text-align:center; padding:20px; margin-top:20px; }
+  </style>
+  <link rel="stylesheet" href="tema.css">
+  <script src="tema.js" defer></script>
+</head>
+<body>
+  <header><a href="index.html">SUDOR Y GLORIA</a></header>
+  <nav>
+    <a href="tenis.html">Noticias</a>
+    <a href="tenis-ranking.html">Ranking</a>
+    <a href="tenis-calendario.html">Calendario</a>
+  </nav>
+
+  <div class="hero">
+    <h1>Calendario ATP Tour 2026</h1>
+    <p>59 torneos en 29 países · 4 Grand Slam · 9 Masters 1000 · 16 ATP 500 · 29 ATP 250</p>
+  </div>
+
+  <div class="contenido">
+
+    <div class="mes-sep">ENERO</div>
+    <div class="torneo finalizado especial"><div class="t-info"><span class="nombre">United Cup</span><span class="etiqueta especial">Equipos</span><div class="lugar">Perth y Sídney, Australia</div></div><div class="t-fecha">2-11 ene</div></div>
+    <div class="torneo finalizado a250"><div class="t-info"><span class="nombre">Brisbane International</span><span class="etiqueta a250">ATP 250</span><div class="lugar">Brisbane, Australia</div></div><div class="t-fecha">5-11 ene</div></div>
+    <div class="torneo finalizado a250"><div class="t-info"><span class="nombre">Hong Kong Tennis Open</span><span class="etiqueta a250">ATP 250</span><div class="lugar">Hong Kong</div></div><div class="t-fecha">5-11 ene</div></div>
+    <div class="torneo finalizado a250"><div class="t-info"><span class="nombre">Adelaide International</span><span class="etiqueta a250">ATP 250</span><div class="lugar">Adelaida, Australia</div></div><div class="t-fecha">12-17 ene</div></div>
+    <div class="torneo finalizado a250"><div class="t-info"><span class="nombre">ASB Classic</span><span class="etiqueta a250">ATP 250</span><div class="lugar">Auckland, Nueva Zelanda</div></div><div class="t-fecha">12-17 ene</div></div>
+    <div class="torneo finalizado grandslam"><div class="t-info"><span class="nombre">Abierto de Australia</span><span class="etiqueta grandslam">Grand Slam</span><div class="lugar">Melbourne, Australia</div></div><div class="t-fecha">18 ene - 1 feb</div></div>
+
+    <div class="mes-sep">FEBRERO</div>
+    <div class="torneo finalizado a250"><div class="t-info"><span class="nombre">Open Occitanie</span><span class="etiqueta a250">ATP 250</span><div class="lugar">Montpellier, Francia</div></div><div class="t-fecha">2-8 feb</div></div>
+    <div class="torneo finalizado a500"><div class="t-info"><span class="nombre">Dallas Open</span><span class="etiqueta a500">ATP 500</span><div class="lugar">Dallas, Estados Unidos</div></div><div class="t-fecha">9-15 feb</div></div>
+    <div class="torneo finalizado a500"><div class="t-info"><span class="nombre">ABN AMRO Open</span><span class="etiqueta a500">ATP 500</span><div class="lugar">Róterdam, Países Bajos</div></div><div class="t-fecha">9-15 feb</div></div>
+    <div class="torneo finalizado a250"><div class="t-info"><span class="nombre">IEB+ Argentina Open</span><span class="etiqueta a250">ATP 250</span><div class="lugar">Buenos Aires, Argentina</div></div><div class="t-fecha">9-15 feb</div></div>
+    <div class="torneo finalizado a500"><div class="t-info"><span class="nombre">Qatar ExxonMobil Open</span><span class="etiqueta a500">ATP 500</span><div class="lugar">Doha, Catar</div></div><div class="t-fecha">16-22 feb</div></div>
+    <div class="torneo finalizado a500"><div class="t-info"><span class="nombre">Rio Open</span><span class="etiqueta a500">ATP 500</span><div class="lugar">Río de Janeiro, Brasil</div></div><div class="t-fecha">16-22 feb</div></div>
+    <div class="torneo finalizado a250"><div class="t-info"><span class="nombre">Delray Beach Open</span><span class="etiqueta a250">ATP 250</span><div class="lugar">Delray Beach, Estados Unidos</div></div><div class="t-fecha">16-22 feb</div></div>
+    <div class="torneo finalizado a500"><div class="t-info"><span class="nombre">Abierto Mexicano Telcel</span><span class="etiqueta a500">ATP 500</span><div class="lugar">Acapulco, México</div></div><div class="t-fecha">23 feb - 1 mar</div></div>
+    <div class="torneo finalizado a500"><div class="t-info"><span class="nombre">Dubai Tennis Championships</span><span class="etiqueta a500">ATP 500</span><div class="lugar">Dubái, Emiratos Árabes</div></div><div class="t-fecha">23 feb - 1 mar</div></div>
+    <div class="torneo finalizado a250"><div class="t-info"><span class="nombre">Chile Open</span><span class="etiqueta a250">ATP 250</span><div class="lugar">Santiago, Chile</div></div><div class="t-fecha">23 feb - 1 mar</div></div>
+
+    <div class="mes-sep">MARZO</div>
+    <div class="torneo finalizado m1000"><div class="t-info"><span class="nombre">BNP Paribas Open</span><span class="etiqueta m1000">Masters 1000</span><div class="lugar">Indian Wells, Estados Unidos</div></div><div class="t-fecha">4-15 mar</div></div>
+    <div class="torneo finalizado m1000"><div class="t-info"><span class="nombre">Miami Open</span><span class="etiqueta m1000">Masters 1000</span><div class="lugar">Miami, Estados Unidos</div></div><div class="t-fecha">18-29 mar</div></div>
+    <div class="torneo finalizado a250"><div class="t-info"><span class="nombre">Tiriac Open</span><span class="etiqueta a250">ATP 250</span><div class="lugar">Bucarest, Rumanía</div></div><div class="t-fecha">30 mar - 5 abr</div></div>
+    <div class="torneo finalizado a250"><div class="t-info"><span class="nombre">US Men's Clay Court Champ.</span><span class="etiqueta a250">ATP 250</span><div class="lugar">Houston, Estados Unidos</div></div><div class="t-fecha">30 mar - 5 abr</div></div>
+    <div class="torneo finalizado a250"><div class="t-info"><span class="nombre">Grand Prix Hassan II</span><span class="etiqueta a250">ATP 250</span><div class="lugar">Marrakech, Marruecos</div></div><div class="t-fecha">30 mar - 5 abr</div></div>
+
+    <div class="mes-sep">ABRIL</div>
+    <div class="torneo finalizado m1000"><div class="t-info"><span class="nombre">Rolex Monte-Carlo Masters</span><span class="etiqueta m1000">Masters 1000</span><div class="lugar">Montecarlo, Mónaco</div></div><div class="t-fecha">5-12 abr</div></div>
+    <div class="torneo finalizado a500"><div class="t-info"><span class="nombre">Barcelona Open Banc Sabadell</span><span class="etiqueta a500">ATP 500</span><div class="lugar">Barcelona, España 🇪🇸</div></div><div class="t-fecha">13-19 abr</div></div>
+    <div class="torneo finalizado a500"><div class="t-info"><span class="nombre">BMW Open</span><span class="etiqueta a500">ATP 500</span><div class="lugar">Múnich, Alemania</div></div><div class="t-fecha">13-19 abr</div></div>
+    <div class="torneo finalizado m1000"><div class="t-info"><span class="nombre">Mutua Madrid Open</span><span class="etiqueta m1000">Masters 1000</span><div class="lugar">Madrid, España 🇪🇸</div></div><div class="t-fecha">22 abr - 3 may</div></div>
+
+    <div class="mes-sep">MAYO</div>
+    <div class="torneo finalizado m1000"><div class="t-info"><span class="nombre">Internazionali BNL d'Italia</span><span class="etiqueta m1000">Masters 1000</span><div class="lugar">Roma, Italia</div></div><div class="t-fecha">6-17 may</div></div>
+    <div class="torneo finalizado a500"><div class="t-info"><span class="nombre">Bitpanda Hamburg Open</span><span class="etiqueta a500">ATP 500</span><div class="lugar">Hamburgo, Alemania</div></div><div class="t-fecha">17-23 may</div></div>
+    <div class="torneo finalizado a250"><div class="t-info"><span class="nombre">Gonet Geneva Open</span><span class="etiqueta a250">ATP 250</span><div class="lugar">Ginebra, Suiza</div></div><div class="t-fecha">17-23 may</div></div>
+    <div class="torneo finalizado grandslam"><div class="t-info"><span class="nombre">Roland Garros</span><span class="etiqueta grandslam">Grand Slam</span><div class="lugar">París, Francia</div></div><div class="t-fecha">24 may - 7 jun</div></div>
+
+    <div class="mes-sep">JUNIO</div>
+    <div class="torneo finalizado a250"><div class="t-info"><span class="nombre">BOSS Open</span><span class="etiqueta a250">ATP 250</span><div class="lugar">Stuttgart, Alemania</div></div><div class="t-fecha">8-14 jun</div></div>
+    <div class="torneo finalizado a250"><div class="t-info"><span class="nombre">Libema Open</span><span class="etiqueta a250">ATP 250</span><div class="lugar">'s-Hertogenbosch, Países Bajos</div></div><div class="t-fecha">8-14 jun</div></div>
+    <div class="torneo finalizado a500"><div class="t-info"><span class="nombre">HSBC Championships (Queen's)</span><span class="etiqueta a500">ATP 500</span><div class="lugar">Londres, Reino Unido</div></div><div class="t-fecha">6-21 jun</div></div>
+    <div class="torneo finalizado a500"><div class="t-info"><span class="nombre">Terra Wortmann Open</span><span class="etiqueta a500">ATP 500</span><div class="lugar">Halle, Alemania</div></div><div class="t-fecha">15-21 jun</div></div>
+    <div class="torneo finalizado a250"><div class="t-info"><span class="nombre">Mallorca Championships</span><span class="etiqueta a250">ATP 250</span><div class="lugar">Mallorca, España 🇪🇸</div></div><div class="t-fecha">21-27 jun</div></div>
+    <div class="torneo finalizado a250"><div class="t-info"><span class="nombre">Lexus Eastbourne Open</span><span class="etiqueta a250">ATP 250</span><div class="lugar">Eastbourne, Reino Unido</div></div><div class="t-fecha">22-27 jun</div></div>
+    <div class="torneo finalizado grandslam"><div class="t-info"><span class="nombre">Wimbledon</span><span class="etiqueta grandslam">Grand Slam</span><div class="lugar">Londres, Reino Unido</div></div><div class="t-fecha">29 jun - 12 jul</div></div>
+
+    <div class="mes-sep">JULIO</div>
+    <div class="torneo finalizado a250"><div class="t-info"><span class="nombre">Nordea Open</span><span class="etiqueta a250">ATP 250</span><div class="lugar">Bastad, Suecia</div></div><div class="t-fecha">13-19 jul</div></div>
+    <div class="torneo finalizado a250"><div class="t-info"><span class="nombre">EFG Swiss Open Gstaad</span><span class="etiqueta a250">ATP 250</span><div class="lugar">Gstaad, Suiza</div></div><div class="t-fecha">13-19 jul</div></div>
+    <div class="torneo finalizado a250"><div class="t-info"><span class="nombre">Croatia Open Umag</span><span class="etiqueta a250">ATP 250</span><div class="lugar">Umag, Croacia</div></div><div class="t-fecha">13-19 jul</div></div>
+    <div class="torneo finalizado a250"><div class="t-info"><span class="nombre">Generali Open</span><span class="etiqueta a250">ATP 250</span><div class="lugar">Kitzbühel, Austria</div></div><div class="t-fecha">20-26 jul</div></div>
+    <div class="torneo finalizado a250"><div class="t-info"><span class="nombre">Millennium Estoril Open</span><span class="etiqueta a250">ATP 250</span><div class="lugar">Estoril, Portugal</div></div><div class="t-fecha">20-26 jul</div></div>
+    <div class="torneo finalizado a500"><div class="t-info"><span class="nombre">Mubadala Citi DC Open</span><span class="etiqueta a500">ATP 500</span><div class="lugar">Washington, Estados Unidos</div></div><div class="t-fecha">27 jul - 2 ago</div></div>
+    <div class="torneo finalizado a250"><div class="t-info"><span class="nombre">Mifel Tennis Open</span><span class="etiqueta a250">ATP 250</span><div class="lugar">Los Cabos, México</div></div><div class="t-fecha">27 jul - 2 ago</div></div>
+
+    <div class="mes-sep">AGOSTO — MES ACTUAL</div>
+    <div class="torneo finalizado m1000"><div class="t-info"><span class="nombre">National Bank Open</span><span class="etiqueta m1000">Masters 1000</span><div class="lugar">Montreal, Canadá</div></div><div class="t-fecha">2-12 ago</div></div>
+    <div class="torneo m1000" style="border-left-color:#c62828; box-shadow:0 0 0 2px #c62828 inset;"><div class="t-info"><span class="nombre">Cincinnati Open</span><span class="etiqueta m1000">Masters 1000</span><div class="lugar">Cincinnati, Estados Unidos</div></div><div class="t-fecha">13-23 ago</div></div>
+    <div class="torneo a250"><div class="t-info"><span class="nombre">Winston-Salem Open</span><span class="etiqueta a250">ATP 250</span><div class="lugar">Winston-Salem, Estados Unidos</div></div><div class="t-fecha">23-29 ago</div></div>
+
+    <div class="mes-sep">SEPTIEMBRE</div>
+    <div class="torneo grandslam"><div class="t-info"><span class="nombre">US Open</span><span class="etiqueta grandslam">Grand Slam</span><div class="lugar">Nueva York, Estados Unidos</div></div><div class="t-fecha">31 ago - 13 sep</div></div>
+    <div class="torneo a250"><div class="t-info"><span class="nombre">Chengdu Open</span><span class="etiqueta a250">ATP 250</span><div class="lugar">Chengdu, China</div></div><div class="t-fecha">23-29 sep</div></div>
+    <div class="torneo a250"><div class="t-info"><span class="nombre">Hangzhou Open</span><span class="etiqueta a250">ATP 250</span><div class="lugar">Hangzhou, China</div></div><div class="t-fecha">23-29 sep</div></div>
+    <div class="torneo especial"><div class="t-info"><span class="nombre">Laver Cup</span><span class="etiqueta especial">Exhibición</span><div class="lugar">Londres, Reino Unido</div></div><div class="t-fecha">25-27 sep</div></div>
+
+    <div class="mes-sep">OCTUBRE</div>
+    <div class="torneo a500"><div class="t-info"><span class="nombre">Japan Open</span><span class="etiqueta a500">ATP 500</span><div class="lugar">Tokio, Japón</div></div><div class="t-fecha">30 sep - 6 oct</div></div>
+    <div class="torneo a500"><div class="t-info"><span class="nombre">China Open</span><span class="etiqueta a500">ATP 500</span><div class="lugar">Pekín, China</div></div><div class="t-fecha">30 sep - 6 oct</div></div>
+    <div class="torneo m1000"><div class="t-info"><span class="nombre">Rolex Shanghai Masters</span><span class="etiqueta m1000">Masters 1000</span><div class="lugar">Shanghái, China</div></div><div class="t-fecha">7-18 oct</div></div>
+    <div class="torneo a250"><div class="t-info"><span class="nombre">Almaty Open</span><span class="etiqueta a250">ATP 250</span><div class="lugar">Almaty, Kazajistán</div></div><div class="t-fecha">19-25 oct</div></div>
+    <div class="torneo a250"><div class="t-info"><span class="nombre">European Open</span><span class="etiqueta a250">ATP 250</span><div class="lugar">Bruselas, Bélgica</div></div><div class="t-fecha">19-25 oct</div></div>
+    <div class="torneo a250"><div class="t-info"><span class="nombre">Grand Prix Auvergne-Rhône-Alpes</span><span class="etiqueta a250">ATP 250</span><div class="lugar">Lyon, Francia</div></div><div class="t-fecha">19-25 oct</div></div>
+    <div class="torneo a500"><div class="t-info"><span class="nombre">Swiss Indoors Basel</span><span class="etiqueta a500">ATP 500</span><div class="lugar">Basilea, Suiza</div></div><div class="t-fecha">26 oct - 1 nov</div></div>
+    <div class="torneo a500"><div class="t-info"><span class="nombre">Erste Bank Open</span><span class="etiqueta a500">ATP 500</span><div class="lugar">Viena, Austria</div></div><div class="t-fecha">26 oct - 1 nov</div></div>
+
+    <div class="mes-sep">NOVIEMBRE</div>
+    <div class="torneo m1000"><div class="t-info"><span class="nombre">Rolex Paris Masters</span><span class="etiqueta m1000">Masters 1000</span><div class="lugar">París, Francia</div></div><div class="t-fecha">2-8 nov</div></div>
+    <div class="torneo a250"><div class="t-info"><span class="nombre">BNP Paribas Nordic Open</span><span class="etiqueta a250">ATP 250</span><div class="lugar">Estocolmo, Suecia</div></div><div class="t-fecha">8-14 nov</div></div>
+    <div class="torneo especial"><div class="t-info"><span class="nombre">Nitto ATP Finals</span><span class="etiqueta especial">ATP Finals</span><div class="lugar">Turín, Italia</div></div><div class="t-fecha">15-22 nov</div></div>
+    <div class="torneo especial"><div class="t-info"><span class="nombre">Copa Davis — Finales</span><span class="etiqueta especial">Copa Davis</span><div class="lugar">Bolonia, Italia</div></div><div class="t-fecha">24-29 nov</div></div>
+
+    <div class="mes-sep">DICIEMBRE</div>
+    <div class="torneo especial"><div class="t-info"><span class="nombre">Next Gen ATP Finals presented by PIF</span><span class="etiqueta especial">Next Gen</span><div class="lugar">Sede por confirmar</div></div><div class="t-fecha">Por confirmar</div></div>
+
+    <p class="nota">Fuente: calendario oficial ATP Tour 2026 anunciado por la ATP en noviembre de 2025. Los torneos ya disputados en 2026 aparecen atenuados; el Cincinnati Open (13-23 agosto) está marcado como el torneo en curso a fecha de hoy. Consulta atptour.com/es/tournaments para horarios de partidos y resultados en directo.</p>
+  </div>
+
+  <footer>
+    Contacto: contacto@sudorygloria.com — Síguenos: Twitter | Instagram | Facebook
+  </footer>
+</body>
+</html>

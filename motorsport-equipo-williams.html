@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Williams | Equipos F1 2026 | Sudor y Gloria</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Arial, sans-serif; background:#fff; color:#111; }
+    header { background:#c62828; text-align:center; padding:20px; }
+    header a { color:#fff; text-decoration:none; font-size:20px; font-weight:bold; }
+    nav { background:#c62828; display:flex; justify-content:center; gap:20px; padding:10px 0; flex-wrap:wrap; }
+    nav a { color:#fff; text-decoration:none; font-weight:bold; padding:4px 8px; }
+    .team-hero { text-align:center; padding:30px 20px 20px; border-bottom:6px solid #00A0DE; }
+    .team-hero img { width:90px; height:90px; object-fit:contain; }
+    .team-hero h1 { margin:10px 0 4px; font-size:1.8rem; }
+    .team-hero p { color:#666; }
+    .contenido { max-width:800px; margin:0 auto; padding:20px; }
+    .datos-grid { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:30px; }
+    .dato { flex:1; min-width:150px; background:#f7f7f7; border-radius:8px; padding:12px 16px; }
+    .dato .etiqueta { font-size:0.75rem; color:#888; text-transform:uppercase; }
+    .dato .valor { font-weight:bold; font-size:1.05rem; }
+    h2 { border-left:5px solid #00A0DE; padding-left:10px; margin-top:35px; }
+    p.texto { line-height:1.6; color:#333; }
+    .titulos-grid { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+    .anio { background:#00A0DE; color:#fff; font-weight:bold; font-size:0.85rem; padding:4px 10px; border-radius:14px; }
+    .pilotos { display:flex; gap:16px; flex-wrap:wrap; margin-top:10px; }
+    .piloto-card { background:#f7f7f7; border-radius:8px; padding:14px 20px; min-width:160px; }
+    .piloto-card .nombre { font-weight:bold; }
+    .piloto-card .rol { font-size:0.8rem; color:#777; }
+    a.volver { display:inline-block; margin-top:30px; color:#00A0DE; font-weight:bold; text-decoration:none; }
+    footer { background:#c62828; color:#fff; text-align:center; padding:20px; margin-top:40px; }
+  </style>
+  <link rel="stylesheet" href="tema.css">
+  <script src="tema.js" defer></script>
+</head>
+<body>
+  <header><a href="index.html">SUDOR Y GLORIA</a></header>
+  <nav>
+    <a href="motorsport.html">Noticias</a>
+    <a href="motorsport-clasificacion.html">Clasificación</a>
+    <a href="motorsport-calendario.html">Calendario</a>
+    <a href="motorsport-equipos.html">Equipos</a>
+  </nav>
+
+  <div class="team-hero">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Williams_Racing_logo.svg?width=100" alt="Williams">
+    <h1>Williams Racing</h1>
+    <p>9º en el Mundial de Constructores 2026 — 11 puntos</p>
+  </div>
+
+  <div class="contenido">
+    <div class="datos-grid">
+      <div class="dato"><div class="etiqueta">Fundación</div><div class="valor">1977</div></div>
+      <div class="dato"><div class="etiqueta">Nacionalidad</div><div class="valor">🇬🇧 Reino Unido</div></div>
+      <div class="dato"><div class="etiqueta">Base</div><div class="valor">Grove, Reino Unido</div></div>
+      <div class="dato"><div class="etiqueta">Títulos Constructores</div><div class="valor">9</div></div>
+      <div class="dato"><div class="etiqueta">Títulos Pilotos</div><div class="valor">7</div></div>
+    </div>
+
+    <h2>Fundación y primeros años</h2>
+    <p class="texto">Frank Williams fundó el equipo que lleva su nombre en 1977, tras varios intentos previos con estructuras diferentes en la década anterior. Williams Grand Prix Engineering se convirtió rápidamente en sinónimo de coches rápidos y fiables, forjando una de las historias más laureadas de la Fórmula 1.</p>
+
+    <h2>Historia y evolución del equipo</h2>
+    <p class="texto">Entre finales de los 70 y los años 90, Williams fue una máquina de ganar títulos, con pilotos como Alan Jones, Keke Rosberg, Nelson Piquet, Nigel Mansell, Alain Prost, Damon Hill y Jacques Villeneuve levantando trofeos para el equipo de Grove. Los años 2000 y 2010 fueron mucho más difíciles, con el equipo luchando por recuperar su antiguo esplendor en la zona media y baja de la parrilla, aunque sigue siendo uno de los nombres más respetados de la historia del deporte.</p>
+
+    <h2>Campeonatos de Constructores</h2>
+    <div class="titulos-grid">
+      <span class="anio">1980</span><span class="anio">1981</span><span class="anio">1986</span><span class="anio">1987</span>
+      <span class="anio">1992</span><span class="anio">1993</span><span class="anio">1994</span><span class="anio">1996</span>
+      <span class="anio">1997</span>
+    </div>
+
+    <h2>Campeonatos de Pilotos</h2>
+    <div class="titulos-grid">
+      <span class="anio">1980 Jones</span><span class="anio">1982 Rosberg</span><span class="anio">1987 Piquet</span>
+      <span class="anio">1992 Mansell</span><span class="anio">1993 Prost</span><span class="anio">1996 Hill</span>
+      <span class="anio">1997 Villeneuve</span>
+    </div>
+
+    <h2>Pilotos 2026</h2>
+    <div class="pilotos">
+      <div class="piloto-card"><div class="nombre">Carlos Sainz</div><div class="rol">15º en el Mundial — 6 pts</div></div>
+      <div class="piloto-card"><div class="nombre">Alex Albon</div><div class="rol">16º en el Mundial — 5 pts</div></div>
+    </div>
+
+    <h2>Noticias recientes</h2>
+    <p class="texto">Temporada complicada para Williams en 2026 tras el cambio de reglamento técnico. Carlos Sainz se vio envuelto en un incidente con un coche doblado en Hungría que le costó tiempo y posiciones en una carrera ya de por sí difícil para el equipo británico.</p>
+
+    <a href="motorsport-equipos.html" class="volver">← Volver a Equipos</a>
+  </div>
+
+  <footer>
+    Contacto: contacto@sudorygloria.com — Síguenos: Twitter | Instagram | Facebook
+  </footer>
+</body>
+</html>

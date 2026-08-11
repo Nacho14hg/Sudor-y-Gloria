@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Red Bull Racing | Equipos F1 2026 | Sudor y Gloria</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Arial, sans-serif; background:#fff; color:#111; }
+    header { background:#c62828; text-align:center; padding:20px; }
+    header a { color:#fff; text-decoration:none; font-size:20px; font-weight:bold; }
+    nav { background:#c62828; display:flex; justify-content:center; gap:20px; padding:10px 0; flex-wrap:wrap; }
+    nav a { color:#fff; text-decoration:none; font-weight:bold; padding:4px 8px; }
+    .team-hero { text-align:center; padding:30px 20px 20px; border-bottom:6px solid #1E41FF; }
+    .team-hero img { width:90px; height:90px; object-fit:contain; }
+    .team-hero h1 { margin:10px 0 4px; font-size:1.8rem; }
+    .team-hero p { color:#666; }
+    .contenido { max-width:800px; margin:0 auto; padding:20px; }
+    .datos-grid { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:30px; }
+    .dato { flex:1; min-width:150px; background:#f7f7f7; border-radius:8px; padding:12px 16px; }
+    .dato .etiqueta { font-size:0.75rem; color:#888; text-transform:uppercase; }
+    .dato .valor { font-weight:bold; font-size:1.05rem; }
+    h2 { border-left:5px solid #1E41FF; padding-left:10px; margin-top:35px; }
+    p.texto { line-height:1.6; color:#333; }
+    .titulos-grid { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+    .anio { background:#1E41FF; color:#fff; font-weight:bold; font-size:0.85rem; padding:4px 10px; border-radius:14px; }
+    .pilotos { display:flex; gap:16px; flex-wrap:wrap; margin-top:10px; }
+    .piloto-card { background:#f7f7f7; border-radius:8px; padding:14px 20px; min-width:160px; }
+    .piloto-card .nombre { font-weight:bold; }
+    .piloto-card .rol { font-size:0.8rem; color:#777; }
+    a.volver { display:inline-block; margin-top:30px; color:#1E41FF; font-weight:bold; text-decoration:none; }
+    footer { background:#c62828; color:#fff; text-align:center; padding:20px; margin-top:40px; }
+  </style>
+  <link rel="stylesheet" href="tema.css">
+  <script src="tema.js" defer></script>
+</head>
+<body>
+  <header><a href="index.html">SUDOR Y GLORIA</a></header>
+  <nav>
+    <a href="motorsport.html">Noticias</a>
+    <a href="motorsport-clasificacion.html">Clasificación</a>
+    <a href="motorsport-calendario.html">Calendario</a>
+    <a href="motorsport-equipos.html">Equipos</a>
+  </nav>
+
+  <div class="team-hero">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Red_Bull_Racing_logo.svg?width=100" alt="Red Bull Racing">
+    <h1>Oracle Red Bull Racing</h1>
+    <p>4º en el Mundial de Constructores 2026 — 177 puntos</p>
+  </div>
+
+  <div class="contenido">
+    <div class="datos-grid">
+      <div class="dato"><div class="etiqueta">Fundación</div><div class="valor">2005</div></div>
+      <div class="dato"><div class="etiqueta">Nacionalidad</div><div class="valor">🇦🇹 Austria</div></div>
+      <div class="dato"><div class="etiqueta">Base</div><div class="valor">Milton Keynes, Reino Unido</div></div>
+      <div class="dato"><div class="etiqueta">Títulos Constructores</div><div class="valor">6</div></div>
+      <div class="dato"><div class="etiqueta">Títulos Pilotos</div><div class="valor">8</div></div>
+    </div>
+
+    <h2>Fundación y primeros años</h2>
+    <p class="texto">Red Bull Racing nació en 2005, cuando la marca austriaca de bebidas energéticas compró el struggling Jaguar Racing (heredero a su vez de Stewart Grand Prix). En pocos años, gracias a fuertes inversiones y al fichaje del diseñador Adrian Newey, el equipo pasó de ser un proyecto modesto a una potencia de la parrilla.</p>
+
+    <h2>Historia y evolución del equipo</h2>
+    <p class="texto">Bajo el liderazgo de Christian Horner, Red Bull vivió su primera gran era dorada entre 2010 y 2013, con Sebastian Vettel logrando cuatro títulos de Pilotos consecutivos y el equipo cuatro Campeonatos de Constructores seguidos.</p>
+    <p class="texto">Tras años de dominio de los motores híbridos rivales, Max Verstappen devolvió a Red Bull a lo más alto a partir de 2021, encadenando cuatro títulos de Pilotos y ayudando al equipo a sumar dos Campeonatos de Constructores más en 2022 y 2023. La temporada 2026 ha supuesto un reto mayor para el equipo tras el cambio de reglamento técnico.</p>
+
+    <h2>Campeonatos de Constructores</h2>
+    <div class="titulos-grid">
+      <span class="anio">2010</span><span class="anio">2011</span><span class="anio">2012</span><span class="anio">2013</span>
+      <span class="anio">2022</span><span class="anio">2023</span>
+    </div>
+
+    <h2>Campeonatos de Pilotos</h2>
+    <div class="titulos-grid">
+      <span class="anio">2010 Vettel</span><span class="anio">2011 Vettel</span><span class="anio">2012 Vettel</span>
+      <span class="anio">2013 Vettel</span><span class="anio">2021 Verstappen</span><span class="anio">2022 Verstappen</span>
+      <span class="anio">2023 Verstappen</span><span class="anio">2024 Verstappen</span>
+    </div>
+
+    <h2>Pilotos 2026</h2>
+    <div class="pilotos">
+      <div class="piloto-card"><div class="nombre">Max Verstappen</div><div class="rol">6º en el Mundial — 109 pts</div></div>
+      <div class="piloto-card"><div class="nombre">Isack Hadjar</div><div class="rol">8º en el Mundial — 68 pts</div></div>
+    </div>
+
+    <h2>Noticias recientes</h2>
+    <p class="texto">Max Verstappen firmó un gran podio en Hungría, pero el propio equipo admite que aún no le ha dado "un coche con el que apretar" en la lucha por el título bajo la nueva normativa técnica de 2026. Isack Hadjar, ascendido desde Racing Bulls, está cuajando una temporada de debut sólida junto al neerlandés.</p>
+
+    <a href="motorsport-equipos.html" class="volver">← Volver a Equipos</a>
+  </div>
+
+  <footer>
+    Contacto: contacto@sudorygloria.com — Síguenos: Twitter | Instagram | Facebook
+  </footer>
+</body>
+</html>

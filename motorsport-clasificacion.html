@@ -1,85 +1,380 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clasificación F1 | Sudor y Gloria</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clasificación F1 2026 | Sudor y Gloria</title>
   <style>
-    body { margin:0; font-family: Arial, sans-serif; background:#fff; color:#000; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Arial, sans-serif; background:#fff; color:#111; }
     header { background:#c62828; text-align:center; padding:20px; }
     header a { color:#fff; text-decoration:none; font-size:20px; font-weight:bold; }
-    nav { background:#c62828; display:flex; justify-content:center; gap:20px; padding:10px 0; }
-    nav a { color:#fff; text-decoration:none; font-weight:bold; }
-    .columns { display:flex; flex-wrap:wrap; max-width:1200px; margin:20px auto; }
-    .column { flex:1; min-width:300px; padding:10px; }
-    .column h2 { font-weight:bold; margin-bottom:10px; }
-    table { width:100%; border-collapse:collapse; }
-    th, td { border:1px solid #ddd; padding:6px; text-align:left; }
-    th { background:#f0f0f0; }
-    .logo { width:25px; vertical-align:middle; margin-right:8px; }
+    nav { background:#c62828; display:flex; justify-content:center; gap:20px; padding:10px 0; flex-wrap:wrap; }
+    nav a { color:#fff; text-decoration:none; font-weight:bold; padding:4px 8px; }
+    nav a.activo { text-decoration:underline; }
+
+    .hero { text-align:center; padding:30px 20px 10px; }
+    .hero h1 { margin:0; font-size:1.8rem; }
+    .hero p { color:#666; margin-top:6px; }
+
+    .contenido { max-width:900px; margin:0 auto; padding:20px; }
+
+    .switch { display:flex; justify-content:center; gap:10px; margin-bottom:20px; }
+    .switch button {
+      border:2px solid #c62828; background:#fff; color:#c62828;
+      font-weight:bold; padding:8px 20px; border-radius:20px; cursor:pointer; font-size:0.9rem;
+    }
+    .switch button.activo { background:#c62828; color:#fff; }
+
+    .fila {
+      display:flex;
+      align-items:center;
+      gap:14px;
+      padding:12px 14px;
+      border:1px solid #eee;
+      border-left:6px solid #ccc;
+      border-radius:6px;
+      margin-bottom:8px;
+      background:#fafafa;
+    }
+    .fila.top3 { background:#fff5f5; }
+    .pos {
+      font-weight:bold; font-size:1.1rem; width:30px; text-align:center; color:#c62828;
+    }
+    .nombre-bloque { flex-grow:1; }
+    .nombre-bloque .nombre { font-weight:bold; font-size:1rem; }
+    .nombre-bloque .equipo { font-size:0.8rem; color:#777; }
+    .pts { font-weight:bold; font-size:1.05rem; min-width:70px; text-align:right; }
+    .barra-fondo { width:100%; height:5px; background:#eee; border-radius:3px; margin-top:6px; overflow:hidden; }
+    .barra-rel { height:100%; background:#c62828; }
+
+    .tabla-vista { display:none; }
+    .tabla-vista.visible { display:block; }
+
+    .nota { color:#888; font-size:0.82rem; margin-top:16px; text-align:center; }
     footer { background:#c62828; color:#fff; text-align:center; padding:20px; margin-top:40px; }
   </style>
+  <link rel="stylesheet" href="tema.css">
+  <script src="tema.js" defer></script>
 </head>
 <body>
-
   <header><a href="index.html">SUDOR Y GLORIA</a></header>
   <nav>
     <a href="motorsport.html">Noticias</a>
-    <a href="motorsport-clasificacion.html">Clasificación</a>
+    <a href="motorsport-clasificacion.html" class="activo">Clasificación</a>
     <a href="motorsport-calendario.html">Calendario</a>
     <a href="motorsport-equipos.html">Equipos</a>
   </nav>
 
-  <div class="columns">
-    <div class="column">
-      <h2>Clasificación Pilotos 2025</h2>
-      <table>
-        <tr><th>#</th><th>Piloto</th><th>Puntos</th></tr>
-        <!-- Datos oficiales según ESPN / RacingNews365 -->
-        <tr><td>1</td><td><img src="https://logos-world.net/wp-content/uploads/2021/02/McLaren-logo.png" class="logo" alt="McLaren">Oscar Piastri</td><td>284</td></tr>
-        <tr><td>2</td><td><img src="https://logos-world.net/wp-content/uploads/2021/02/McLaren-logo.png" class="logo" alt="McLaren">Lando Norris</td><td>275</td></tr>
-        <tr><td>3</td><td><img src="https://1000logos.net/wp-content/uploads/2021/04/Red-Bull-Racing-Emblem.png" class="logo" alt="Red Bull">Max Verstappen</td><td>187</td></tr>
-        <tr><td>4</td><td><img src="https://1000logos.net/wp-content/uploads/2021/08/Mercedes-Star-Logo.png" class="logo" alt="Mercedes">George Russell</td><td>172</td></tr>
-        <tr><td>5</td><td><img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Ferrari_Logo.png" class="logo" alt="Ferrari">Charles Leclerc</td><td>151</td></tr>
-        <tr><td>6</td><td><img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Ferrari_Logo.png" class="logo" alt="Ferrari">Lewis Hamilton</td><td>109</td></tr>
-        <tr><td>7</td><td><img src="https://1000logos.net/wp-content/uploads/2021/08/Mercedes-Star-Logo.png" class="logo" alt="Mercedes">Kimi Antonelli</td><td>64</td></tr>
-        <tr><td>8</td><td><img src="https://logos-world.net/wp-content/uploads/2021/07/Williams-Logo.png" class="logo" alt="Williams">Alex Albon</td><td>54</td></tr>
-        <tr><td>9</td><td><img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/AlfaTauri_2023_logo.svg" class="logo" alt="AlphaTauri">Nico Hülkenberg</td><td>37</td></tr>
-        <tr><td>10</td><td><img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Haas_F1_Team_Logo.png" class="logo" alt="Haas">Esteban Ocon</td><td>27</td></tr>
-        <tr><td>11</td><td><img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Aston_Martin_Logo.png" class="logo" alt="Aston Martin">Fernando Alonso</td><td>26</td></tr>
-        <tr><td>12</td><td><img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Aston_Martin_Logo.png" class="logo" alt="Aston Martin">Lance Stroll</td><td>26</td></tr>
-        <tr><td>13</td><td><img src="https://1000logos.net/wp-content/uploads/2021/04/Red-Bull-Racing-Emblem.png" class="logo" alt="Racing Bulls">Isack Hadjar</td><td>22</td></tr>
-        <tr><td>14</td><td><img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Ferrari_Logo.png" class="logo" alt="Alpine">Pierre Gasly</td><td>20</td></tr>
-        <tr><td>15</td><td><img src="https://1000logos.net/wp-content/uploads/2021/08/Mercedes-Star-Logo.png" class="logo" alt="Racing Bulls">Liam Lawson</td><td>20</td></tr>
-        <tr><td>16</td><td><img src="https://logos-world.net/wp-content/uploads/2021/07/Williams-Logo.png" class="logo" alt="Williams">Carlos Sainz</td><td>16</td></tr>
-        <tr><td>17</td><td><img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Aston_Martin_Logo.png" class="logo" alt="Sauber">Gabriel Bortoleto</td><td>14</td></tr>
-        <tr><td>18</td><td><img src="https://1000logos.net/wp-content/uploads/2021/04/Red-Bull-Racing-Emblem.png" class="logo" alt="Red Bull">Yuki Tsunoda</td><td>10</td></tr>
-        <tr><td>19</td><td><img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Haas_F1_Team_Logo.png" class="logo" alt="Haas">Oliver Bearman</td><td>8</td></tr>
-        <tr><td>20</td><td><img src="https://logos-world.net/wp-content/uploads/2021/02/McLaren-logo.png" class="logo" alt="Alpine">Franco Colapinto</td><td>0</td></tr>
-        <tr><td>21</td><td><img src="https://1000logos.net/wp-content/uploads/2021/08/Mercedes-Star-Logo.png" class="logo" alt="Alpine">Jack Doohan</td><td>0</td></tr>
-      </table>
+  <div class="hero">
+    <h1>Clasificación Mundial F1 2026</h1>
+    <p>Tras el Gran Premio de Hungría — Ronda 11 de 22</p>
+  </div>
+
+  <div class="contenido">
+    <div class="switch">
+      <button id="btn-pilotos" class="activo" onclick="mostrar('pilotos')">Pilotos</button>
+      <button id="btn-equipos" onclick="mostrar('equipos')">Constructores</button>
     </div>
-    <div class="column">
-      <h2>Constructores 2025</h2>
-      <table>
-        <tr><th>#</th><th>Escudería</th><th>Puntos</th></tr>
-        <tr><td>1</td><td><img src="https://logos-world.net/wp-content/uploads/2021/02/McLaren-logo.png" class="logo" alt="McLaren">McLaren</td><td>559</td></tr>
-        <tr><td>2</td><td><img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Ferrari_Logo.png" class="logo" alt="Ferrari">Ferrari</td><td>260</td></tr>
-        <tr><td>3</td><td><img src="https://1000logos.net/wp-content/uploads/2021/08/Mercedes-Star-Logo.png" class="logo" alt="Mercedes">Mercedes</td><td>236</td></tr>
-        <tr><td>4</td><td><img src="https://1000logos.net/wp-content/uploads/2021/04/Red-Bull-Racing-Emblem.png" class="logo" alt="Red Bull Racing">Red Bull Racing</td><td>194</td></tr>
-        <tr><td>5</td><td><img src="https://logos-world.net/wp-content/uploads/2021/07/Williams-Logo.png" class="logo" alt="Williams">Williams</td><td>70</td></tr>
-        <tr><td>6</td><td><img src="https://logodownload.org/wp-content/uploads/2021/09/aston-martin-logo-1.png" class="logo" alt="Aston Martin">Aston Martin</td><td>52</td></tr>
-        <tr><td>7</td><td><img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/AlfaTauri_2023_logo.svg" class="logo" alt="Sauber">Sauber</td><td>51</td></tr>
-        <tr><td>8</td><td><img src="https://1000logos.net/wp-content/uploads/2021/04/Red-Bull-Racing-Emblem.png" class="logo" alt="Racing Bulls">Racing Bulls</td><td>45</td></tr>
-        <tr><td>9</td><td><img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Haas_F1_Team_Logo.png" class="logo" alt="Haas">Haas</td><td>35</td></tr>
-        <tr><td>10</td><td><img src="https://logos-world.net/wp-content/uploads/2021/02/Alpine-logo.png" class="logo" alt="Alpine">Alpine</td><td>20</td></tr>
-      </table>
+
+    <div id="vista-pilotos" class="tabla-vista visible">
+      <!-- Cada fila: borde de color = color del equipo -->
+      <div class="fila top3" style="border-left-color:#00D2BE;">
+        <div class="pos">1</div>
+        <div class="nombre-bloque">
+          <div class="nombre">Kimi Antonelli</div>
+          <div class="equipo">Mercedes</div>
+          <div class="barra-fondo"><div class="barra-rel" style="width:100%; background:#00D2BE;"></div></div>
+        </div>
+        <div class="pts">219</div>
+      </div>
+      <div class="fila top3" style="border-left-color:#DC0000;">
+        <div class="pos">2</div>
+        <div class="nombre-bloque">
+          <div class="nombre">Lewis Hamilton</div>
+          <div class="equipo">Ferrari</div>
+          <div class="barra-fondo"><div class="barra-rel" style="width:77%; background:#DC0000;"></div></div>
+        </div>
+        <div class="pts">169</div>
+      </div>
+      <div class="fila top3" style="border-left-color:#00D2BE;">
+        <div class="pos">3</div>
+        <div class="nombre-bloque">
+          <div class="nombre">George Russell</div>
+          <div class="equipo">Mercedes</div>
+          <div class="barra-fondo"><div class="barra-rel" style="width:73%; background:#00D2BE;"></div></div>
+        </div>
+        <div class="pts">160</div>
+      </div>
+      <div class="fila" style="border-left-color:#DC0000;">
+        <div class="pos">4</div>
+        <div class="nombre-bloque">
+          <div class="nombre">Charles Leclerc</div>
+          <div class="equipo">Ferrari</div>
+          <div class="barra-fondo"><div class="barra-rel" style="width:63%; background:#DC0000;"></div></div>
+        </div>
+        <div class="pts">138</div>
+      </div>
+      <div class="fila" style="border-left-color:#FF8000;">
+        <div class="pos">5</div>
+        <div class="nombre-bloque">
+          <div class="nombre">Lando Norris</div>
+          <div class="equipo">McLaren</div>
+          <div class="barra-fondo"><div class="barra-rel" style="width:58%; background:#FF8000;"></div></div>
+        </div>
+        <div class="pts">128</div>
+      </div>
+      <div class="fila" style="border-left-color:#1E41FF;">
+        <div class="pos">6</div>
+        <div class="nombre-bloque">
+          <div class="nombre">Max Verstappen</div>
+          <div class="equipo">Red Bull</div>
+          <div class="barra-fondo"><div class="barra-rel" style="width:50%; background:#1E41FF;"></div></div>
+        </div>
+        <div class="pts">109</div>
+      </div>
+      <div class="fila" style="border-left-color:#FF8000;">
+        <div class="pos">7</div>
+        <div class="nombre-bloque">
+          <div class="nombre">Oscar Piastri</div>
+          <div class="equipo">McLaren</div>
+          <div class="barra-fondo"><div class="barra-rel" style="width:42%; background:#FF8000;"></div></div>
+        </div>
+        <div class="pts">92</div>
+      </div>
+      <div class="fila" style="border-left-color:#1E41FF;">
+        <div class="pos">8</div>
+        <div class="nombre-bloque">
+          <div class="nombre">Isack Hadjar</div>
+          <div class="equipo">Red Bull</div>
+          <div class="barra-fondo"><div class="barra-rel" style="width:31%; background:#1E41FF;"></div></div>
+        </div>
+        <div class="pts">68</div>
+      </div>
+      <div class="fila" style="border-left-color:#6C98FF;">
+        <div class="pos">9</div>
+        <div class="nombre-bloque">
+          <div class="nombre">Liam Lawson</div>
+          <div class="equipo">Racing Bulls</div>
+          <div class="barra-fondo"><div class="barra-rel" style="width:20%; background:#6C98FF;"></div></div>
+        </div>
+        <div class="pts">43</div>
+      </div>
+      <div class="fila" style="border-left-color:#FF87BC;">
+        <div class="pos">10</div>
+        <div class="nombre-bloque">
+          <div class="nombre">Pierre Gasly</div>
+          <div class="equipo">Alpine</div>
+          <div class="barra-fondo"><div class="barra-rel" style="width:19%; background:#FF87BC;"></div></div>
+        </div>
+        <div class="pts">42</div>
+      </div>
+      <div class="fila" style="border-left-color:#6C98FF;">
+        <div class="pos">11</div>
+        <div class="nombre-bloque">
+          <div class="nombre">Arvid Lindblad</div>
+          <div class="equipo">Racing Bulls</div>
+          <div class="barra-fondo"><div class="barra-rel" style="width:10%; background:#6C98FF;"></div></div>
+        </div>
+        <div class="pts">23</div>
+      </div>
+      <div class="fila" style="border-left-color:#FF87BC;">
+        <div class="pos">12</div>
+        <div class="nombre-bloque">
+          <div class="nombre">Franco Colapinto</div>
+          <div class="equipo">Alpine</div>
+          <div class="barra-fondo"><div class="barra-rel" style="width:9%; background:#FF87BC;"></div></div>
+        </div>
+        <div class="pts">19</div>
+      </div>
+      <div class="fila" style="border-left-color:#B6BABD;">
+        <div class="pos">13</div>
+        <div class="nombre-bloque">
+          <div class="nombre">Oliver Bearman</div>
+          <div class="equipo">Haas</div>
+          <div class="barra-fondo"><div class="barra-rel" style="width:8%; background:#B6BABD;"></div></div>
+        </div>
+        <div class="pts">18</div>
+      </div>
+      <div class="fila" style="border-left-color:#BB0A30;">
+        <div class="pos">14</div>
+        <div class="nombre-bloque">
+          <div class="nombre">Gabriel Bortoleto</div>
+          <div class="equipo">Audi</div>
+          <div class="barra-fondo"><div class="barra-rel" style="width:5%; background:#BB0A30;"></div></div>
+        </div>
+        <div class="pts">10</div>
+      </div>
+      <div class="fila" style="border-left-color:#00A0DE;">
+        <div class="pos">15</div>
+        <div class="nombre-bloque">
+          <div class="nombre">Carlos Sainz</div>
+          <div class="equipo">Williams</div>
+          <div class="barra-fondo"><div class="barra-rel" style="width:3%; background:#00A0DE;"></div></div>
+        </div>
+        <div class="pts">6</div>
+      </div>
+      <div class="fila" style="border-left-color:#00A0DE;">
+        <div class="pos">16</div>
+        <div class="nombre-bloque">
+          <div class="nombre">Alex Albon</div>
+          <div class="equipo">Williams</div>
+          <div class="barra-fondo"><div class="barra-rel" style="width:2%; background:#00A0DE;"></div></div>
+        </div>
+        <div class="pts">5</div>
+      </div>
+      <div class="fila" style="border-left-color:#229971;">
+        <div class="pos">17</div>
+        <div class="nombre-bloque">
+          <div class="nombre">Fernando Alonso</div>
+          <div class="equipo">Aston Martin</div>
+          <div class="barra-fondo"><div class="barra-rel" style="width:1%; background:#229971;"></div></div>
+        </div>
+        <div class="pts">1</div>
+      </div>
+      <div class="fila" style="border-left-color:#BB0A30;">
+        <div class="pos">18</div>
+        <div class="nombre-bloque">
+          <div class="nombre">Nico Hülkenberg</div>
+          <div class="equipo">Audi</div>
+          <div class="barra-fondo"><div class="barra-rel" style="width:1%; background:#BB0A30;"></div></div>
+        </div>
+        <div class="pts">2</div>
+      </div>
+      <div class="fila" style="border-left-color:#B6BABD;">
+        <div class="pos">19</div>
+        <div class="nombre-bloque">
+          <div class="nombre">Esteban Ocon</div>
+          <div class="equipo">Haas</div>
+        </div>
+        <div class="pts">—</div>
+      </div>
+      <div class="fila" style="border-left-color:#229971;">
+        <div class="pos">20</div>
+        <div class="nombre-bloque">
+          <div class="nombre">Lance Stroll</div>
+          <div class="equipo">Aston Martin</div>
+        </div>
+        <div class="pts">—</div>
+      </div>
+      <div class="fila" style="border-left-color:#8B7355;">
+        <div class="pos">21</div>
+        <div class="nombre-bloque">
+          <div class="nombre">Sergio Pérez</div>
+          <div class="equipo">Cadillac</div>
+        </div>
+        <div class="pts">0</div>
+      </div>
+      <div class="fila" style="border-left-color:#8B7355;">
+        <div class="pos">22</div>
+        <div class="nombre-bloque">
+          <div class="nombre">Valtteri Bottas</div>
+          <div class="equipo">Cadillac</div>
+        </div>
+        <div class="pts">0</div>
+      </div>
     </div>
+
+    <div id="vista-equipos" class="tabla-vista">
+      <div class="fila top3" style="border-left-color:#00D2BE;">
+        <div class="pos">1</div>
+        <div class="nombre-bloque">
+          <div class="nombre">Mercedes</div>
+          <div class="barra-fondo"><div class="barra-rel" style="width:100%; background:#00D2BE;"></div></div>
+        </div>
+        <div class="pts">379</div>
+      </div>
+      <div class="fila top3" style="border-left-color:#DC0000;">
+        <div class="pos">2</div>
+        <div class="nombre-bloque">
+          <div class="nombre">Ferrari</div>
+          <div class="barra-fondo"><div class="barra-rel" style="width:81%; background:#DC0000;"></div></div>
+        </div>
+        <div class="pts">307</div>
+      </div>
+      <div class="fila top3" style="border-left-color:#FF8000;">
+        <div class="pos">3</div>
+        <div class="nombre-bloque">
+          <div class="nombre">McLaren</div>
+          <div class="barra-fondo"><div class="barra-rel" style="width:58%; background:#FF8000;"></div></div>
+        </div>
+        <div class="pts">220</div>
+      </div>
+      <div class="fila" style="border-left-color:#1E41FF;">
+        <div class="pos">4</div>
+        <div class="nombre-bloque">
+          <div class="nombre">Red Bull</div>
+          <div class="barra-fondo"><div class="barra-rel" style="width:47%; background:#1E41FF;"></div></div>
+        </div>
+        <div class="pts">177</div>
+      </div>
+      <div class="fila" style="border-left-color:#6C98FF;">
+        <div class="pos">5</div>
+        <div class="nombre-bloque">
+          <div class="nombre">Racing Bulls</div>
+          <div class="barra-fondo"><div class="barra-rel" style="width:17%; background:#6C98FF;"></div></div>
+        </div>
+        <div class="pts">66</div>
+      </div>
+      <div class="fila" style="border-left-color:#FF87BC;">
+        <div class="pos">6</div>
+        <div class="nombre-bloque">
+          <div class="nombre">Alpine</div>
+          <div class="barra-fondo"><div class="barra-rel" style="width:16%; background:#FF87BC;"></div></div>
+        </div>
+        <div class="pts">61</div>
+      </div>
+      <div class="fila" style="border-left-color:#B6BABD;">
+        <div class="pos">7</div>
+        <div class="nombre-bloque">
+          <div class="nombre">Haas</div>
+        </div>
+        <div class="pts">~20</div>
+      </div>
+      <div class="fila" style="border-left-color:#BB0A30;">
+        <div class="pos">8</div>
+        <div class="nombre-bloque">
+          <div class="nombre">Audi</div>
+        </div>
+        <div class="pts">12</div>
+      </div>
+      <div class="fila" style="border-left-color:#00A0DE;">
+        <div class="pos">9</div>
+        <div class="nombre-bloque">
+          <div class="nombre">Williams</div>
+        </div>
+        <div class="pts">11</div>
+      </div>
+      <div class="fila" style="border-left-color:#229971;">
+        <div class="pos">10</div>
+        <div class="nombre-bloque">
+          <div class="nombre">Aston Martin</div>
+        </div>
+        <div class="pts">~2</div>
+      </div>
+      <div class="fila" style="border-left-color:#8B7355;">
+        <div class="pos">11</div>
+        <div class="nombre-bloque">
+          <div class="nombre">Cadillac</div>
+        </div>
+        <div class="pts">0</div>
+      </div>
+    </div>
+
+    <p class="nota">Datos verificados tras el GP de Hungría 2026 (última carrera antes del parón de verano). Las posiciones 19-22 de pilotos y los puntos de Haas/Aston Martin son aproximados: sustitúyelos por los datos oficiales exactos de la FIA/F1.com en cuanto los tengas.</p>
   </div>
 
   <footer>
     Contacto: contacto@sudorygloria.com — Síguenos: Twitter | Instagram | Facebook
   </footer>
+
+  <script>
+    function mostrar(vista) {
+      document.getElementById('vista-pilotos').classList.toggle('visible', vista === 'pilotos');
+      document.getElementById('vista-equipos').classList.toggle('visible', vista === 'equipos');
+      document.getElementById('btn-pilotos').classList.toggle('activo', vista === 'pilotos');
+      document.getElementById('btn-equipos').classList.toggle('activo', vista === 'equipos');
+    }
+  </script>
 </body>
 </html>
-
-

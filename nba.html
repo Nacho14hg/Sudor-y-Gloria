@@ -22,6 +22,22 @@
       font-size: 20px;
       font-weight: bold;
     }
+    nav.subnav {
+      background-color: #c62828;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 0;
+      border-top: 1px solid rgba(255,255,255,0.25);
+    }
+    nav.subnav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav.subnav a.activo {
+      text-decoration: underline;
+    }
     .conference-title {
       font-weight: bold;
       margin: 30px 20px 10px;
@@ -63,6 +79,8 @@
       margin-top: 40px;
     }
   </style>
+  <link rel="stylesheet" href="tema.css">
+  <script src="tema.js" defer></script>
 </head>
 <body>
 
@@ -70,6 +88,11 @@
   <header>
     <a href="index.html">SUDOR Y GLORIA</a>
   </header>
+  <nav class="subnav">
+    <a href="nba.html" class="activo">Noticias</a>
+    <a href="nba-clasificacion.html">Clasificación</a>
+    <a href="nba-calendario.html">Calendario</a>
+  </nav>
 
   <!-- MENÚ ESCUDOS CONFERENCIA ESTE -->
   <div class="conference-title">Conferencia Este:</div>
