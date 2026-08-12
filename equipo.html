@@ -96,6 +96,12 @@
 
           <div class="panel activo" id="panel-noticias">
             <h2>Últimas noticias</h2>
+            ${(equipo.noticiasReales || []).map(n => `
+              <div class="noticia">
+                <h3 style="margin:0 0 4px; font-size:1rem;"><a href="${n.link}" style="color:#c62828; text-decoration:none;">${n.titulo}</a></h3>
+                <p style="margin:0; color:#555; font-size:0.85rem;">${n.resumen}</p>
+              </div>
+            `).join('')}
             <div class="noticia"><p>${equipo.noticia}</p></div>
             <div class="noticia"><p>El club sigue trabajando en su planificación deportiva de cara al arranque de la temporada 2026-27, el 15-16 de agosto.</p></div>
           </div>
