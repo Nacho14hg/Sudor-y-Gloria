@@ -66,6 +66,11 @@
       <a href="index.html">SUDOR Y GLORIA</a>
     </h1>
   </header>
+  <nav class="bg-black flex justify-center gap-6 py-2 flex-wrap">
+    <a href="futbol.html" class="text-white font-bold underline">Noticias</a>
+    <a href="futbol-clasificacion.html" class="text-white font-bold hover:underline">Clasificación</a>
+    <a href="futbol-calendario.html" class="text-white font-bold hover:underline">Calendario</a>
+  </nav>
 
   <!-- Primera División 2026-27 -->
   <section class="py-4 bg-white">
@@ -126,11 +131,25 @@
   <!-- Últimas Noticias -->
   <section class="py-6 container mx-auto px-4 bg-white">
     <h2 class="text-xl font-bold mb-4">Últimas noticias</h2>
-    <ul class="list-disc pl-5 space-y-2">
+    <div class="text-center mb-4">
+      <select id="selector-noticias" onchange="cambiarNoticias(this.value)" class="text-sm px-4 py-2 rounded-full border-2 border-red-600 text-red-600 font-bold">
+        <option value="primera">LALIGA EA Sports (Primera)</option>
+        <option value="segunda">LALIGA Hypermotion (Segunda)</option>
+      </select>
+    </div>
+    <ul class="list-disc pl-5 space-y-2" id="noticias-primera">
       <li><a href="atletico-fuencarral.html" class="hover:text-red-600">El Atlético Fuencarral: La cárcel del talento</a></li>
       <li><a href="tributo-malaga.html" class="hover:text-red-600">Tributo al Málaga: desaparición, esplendor, caída a los infiernos y resurgimiento</a></li>
     </ul>
+    <p id="noticias-segunda" class="text-gray-400 italic" style="display:none;">Todavía no hay noticias publicadas de equipos de Segunda División. ¡Vuelve pronto!</p>
   </section>
+
+  <script>
+    function cambiarNoticias(valor) {
+      document.getElementById('noticias-primera').style.display = valor === 'primera' ? 'block' : 'none';
+      document.getElementById('noticias-segunda').style.display = valor === 'segunda' ? 'block' : 'none';
+    }
+  </script>
 
   <!-- Pie de página -->
   <footer class="bg-red-600 text-white text-center py-6">

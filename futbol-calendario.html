@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calendario Fútbol | Sudor y Gloria</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Arial, sans-serif; background:#fff; color:#000; }
+    header { background:#c62828; text-align:center; padding:20px; }
+    header a { color:#fff; text-decoration:none; font-size:20px; font-weight:bold; }
+    nav.subnav { background:#111; display:flex; justify-content:center; gap:20px; padding:10px 0; flex-wrap:wrap; }
+    nav.subnav a { color:#fff; text-decoration:none; font-weight:bold; }
+    nav.subnav a.activo { text-decoration:underline; }
+    .hero { text-align:center; padding:24px 20px 10px; }
+    .hero h1 { margin:0; font-size:1.7rem; }
+    .hero p { color:#666; margin-top:6px; }
+    .selector { text-align:center; margin:16px 0 24px; }
+    .selector select {
+      font-size:1rem; padding:8px 16px; border-radius:20px; border:2px solid #c62828;
+      color:#c62828; font-weight:bold; background:#fff; cursor:pointer;
+    }
+    .contenido { max-width:700px; margin:0 auto; padding:0 20px 30px; }
+    .partido {
+      display:flex; justify-content:space-between; align-items:center; gap:10px;
+      border:1px solid #eee; border-radius:8px; padding:12px 16px; margin-bottom:10px;
+    }
+    .partido.confirmado { border-left:5px solid #c62828; }
+    .partido .equipos { font-weight:bold; }
+    .partido .fecha { font-size:0.85rem; color:#666; text-align:right; }
+    .pendiente { color:#999; font-style:italic; text-align:center; padding:14px; font-size:0.9rem; }
+    .nota { color:#888; font-size:0.82rem; margin-top:16px; text-align:center; }
+    footer { background:#c62828; color:#fff; text-align:center; padding:20px; margin-top:40px; }
+  </style>
+  <link rel="stylesheet" href="tema.css">
+  <script src="tema.js" defer></script>
+</head>
+<body>
+  <header><a href="index.html">SUDOR Y GLORIA</a></header>
+  <nav class="subnav">
+    <a href="futbol.html">Noticias</a>
+    <a href="futbol-clasificacion.html">Clasificación</a>
+    <a href="futbol-calendario.html" class="activo">Calendario</a>
+  </nav>
+
+  <div class="hero">
+    <h1>Calendario — Jornada 1</h1>
+    <p>Temporada 2026-27</p>
+  </div>
+
+  <div class="selector">
+    <select id="selector-liga" onchange="cambiarLiga(this.value)">
+      <option value="primera">LALIGA EA Sports (Primera)</option>
+      <option value="segunda">LALIGA Hypermotion (Segunda)</option>
+    </select>
+  </div>
+
+  <div class="contenido">
+    <div id="cal-primera">
+      <div class="partido confirmado">
+        <div class="equipos">Deportivo Alavés vs. Getafe CF</div>
+        <div class="fecha">Sáb 15 agosto<br>19:00</div>
+      </div>
+      <div class="partido confirmado">
+        <div class="equipos">Sevilla FC vs. Rayo Vallecano</div>
+        <div class="fecha">Sáb 15 agosto</div>
+      </div>
+      <div class="partido confirmado">
+        <div class="equipos">FC Barcelona vs. Athletic Club</div>
+        <div class="fecha">Jue 27 agosto<br>21:00</div>
+      </div>
+      <div class="pendiente">
+        Faltan 7 partidos de la Jornada 1 por confirmar horario oficial<br>
+        (Real Madrid, Atlético, Real Sociedad, Betis, Villarreal, Valencia, Osasuna, Espanyol,
+        Elche, Levante, Málaga, Celta, Racing y Deportivo, entre el 15 y el 27 de agosto).
+      </div>
+    </div>
+
+    <div id="cal-segunda" style="display:none;">
+      <div class="pendiente">
+        LALIGA Hypermotion también arranca el fin de semana del 15-16 de agosto, pero LaLiga
+        todavía no ha publicado los horarios oficiales partido a partido de la Jornada 1
+        de Segunda División. En cuanto se confirmen, se actualizan aquí.
+      </div>
+    </div>
+
+    <p class="nota">Fuente: LaLiga.com. Actualiza esta página cerca del 15 de agosto para ver el resto de horarios confirmados.</p>
+  </div>
+
+  <footer>
+    Contacto: contacto@sudorygloria.com — Síguenos: Twitter | Instagram | Facebook
+  </footer>
+
+  <script>
+    function cambiarLiga(valor) {
+      document.getElementById('cal-primera').style.display = valor === 'primera' ? 'block' : 'none';
+      document.getElementById('cal-segunda').style.display = valor === 'segunda' ? 'block' : 'none';
+    }
+  </script>
+</body>
+</html>

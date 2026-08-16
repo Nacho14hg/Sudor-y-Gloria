@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clasificación Fútbol | Sudor y Gloria</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Arial, sans-serif; background:#fff; color:#000; }
+    header { background:#c62828; text-align:center; padding:20px; }
+    header a { color:#fff; text-decoration:none; font-size:20px; font-weight:bold; }
+    nav.subnav { background:#111; display:flex; justify-content:center; gap:20px; padding:10px 0; flex-wrap:wrap; }
+    nav.subnav a { color:#fff; text-decoration:none; font-weight:bold; }
+    nav.subnav a.activo { text-decoration:underline; }
+    .hero { text-align:center; padding:24px 20px 10px; }
+    .hero h1 { margin:0; font-size:1.7rem; }
+    .hero p { color:#666; margin-top:6px; }
+    .selector { text-align:center; margin:16px 0 24px; }
+    .selector select {
+      font-size:1rem; padding:8px 16px; border-radius:20px; border:2px solid #c62828;
+      color:#c62828; font-weight:bold; background:#fff; cursor:pointer;
+    }
+    .contenido { max-width:800px; margin:0 auto; padding:0 20px 30px; }
+    table { width:100%; border-collapse:collapse; font-size:0.88rem; }
+    th, td { border:1px solid #eee; padding:8px 6px; text-align:center; }
+    th { background:#f0f0f0; }
+    td.equipo { text-align:left; font-weight:bold; }
+    td.equipo img { height:20px; vertical-align:middle; margin-right:8px; }
+    .nota { color:#888; font-size:0.82rem; margin-top:16px; text-align:center; }
+    footer { background:#c62828; color:#fff; text-align:center; padding:20px; margin-top:40px; }
+  </style>
+  <link rel="stylesheet" href="tema.css">
+  <script src="tema.js" defer></script>
+</head>
+<body>
+  <header><a href="index.html">SUDOR Y GLORIA</a></header>
+  <nav class="subnav">
+    <a href="futbol.html">Noticias</a>
+    <a href="futbol-clasificacion.html" class="activo">Clasificación</a>
+    <a href="futbol-calendario.html">Calendario</a>
+  </nav>
+
+  <div class="hero">
+    <h1>Clasificación</h1>
+    <p>Temporada 2026-27 — arranca el sábado 15 de agosto, todos los equipos empiezan a 0 puntos</p>
+  </div>
+
+  <div class="selector">
+    <select id="selector-liga" onchange="cambiarLiga(this.value)">
+      <option value="primera">LALIGA EA Sports (Primera)</option>
+      <option value="segunda">LALIGA Hypermotion (Segunda)</option>
+    </select>
+  </div>
+
+  <div class="contenido">
+    <div id="tabla-primera">
+      <table>
+        <tr><th>#</th><th style="text-align:left;">Equipo</th><th>Pts</th></tr>
+        <tr><td>1</td><td class="equipo"><a href="equipo.html?id=alaves">Deportivo Alavés</a></td><td>0</td></tr>
+        <tr><td>2</td><td class="equipo"><a href="equipo.html?id=athletic-club">Athletic Club</a></td><td>0</td></tr>
+        <tr><td>3</td><td class="equipo"><a href="equipo.html?id=atletico-madrid">Atlético de Madrid</a></td><td>0</td></tr>
+        <tr><td>4</td><td class="equipo"><a href="equipo.html?id=barcelona">FC Barcelona</a></td><td>0</td></tr>
+        <tr><td>5</td><td class="equipo"><a href="equipo.html?id=real-betis">Real Betis</a></td><td>0</td></tr>
+        <tr><td>6</td><td class="equipo"><a href="equipo.html?id=celta">RC Celta de Vigo</a></td><td>0</td></tr>
+        <tr><td>7</td><td class="equipo"><a href="equipo.html?id=deportivo">RC Deportivo de La Coruña</a></td><td>0</td></tr>
+        <tr><td>8</td><td class="equipo"><a href="equipo.html?id=elche">Elche CF</a></td><td>0</td></tr>
+        <tr><td>9</td><td class="equipo"><a href="equipo.html?id=espanyol">RCD Espanyol</a></td><td>0</td></tr>
+        <tr><td>10</td><td class="equipo"><a href="equipo.html?id=getafe">Getafe CF</a></td><td>0</td></tr>
+        <tr><td>11</td><td class="equipo"><a href="equipo.html?id=levante">Levante UD</a></td><td>0</td></tr>
+        <tr><td>12</td><td class="equipo"><a href="equipo.html?id=malaga">Málaga CF</a></td><td>0</td></tr>
+        <tr><td>13</td><td class="equipo"><a href="equipo.html?id=osasuna">CA Osasuna</a></td><td>0</td></tr>
+        <tr><td>14</td><td class="equipo"><a href="equipo.html?id=racing-santander">Real Racing Club de Santander</a></td><td>0</td></tr>
+        <tr><td>15</td><td class="equipo"><a href="equipo.html?id=rayo-vallecano">Rayo Vallecano</a></td><td>0</td></tr>
+        <tr><td>16</td><td class="equipo"><a href="equipo.html?id=real-madrid">Real Madrid</a></td><td>0</td></tr>
+        <tr><td>17</td><td class="equipo"><a href="equipo.html?id=real-sociedad">Real Sociedad</a></td><td>0</td></tr>
+        <tr><td>18</td><td class="equipo"><a href="equipo.html?id=sevilla">Sevilla FC</a></td><td>0</td></tr>
+        <tr><td>19</td><td class="equipo"><a href="equipo.html?id=valencia">Valencia CF</a></td><td>0</td></tr>
+        <tr><td>20</td><td class="equipo"><a href="equipo.html?id=villarreal">Villarreal CF</a></td><td>0</td></tr>
+      </table>
+    </div>
+
+    <div id="tabla-segunda" style="display:none;">
+      <table>
+        <tr><th>#</th><th style="text-align:left;">Equipo</th><th>Pts</th></tr>
+        <tr><td>1</td><td class="equipo"><a href="equipo.html?id=albacete">UD Albacete Balompié</a></td><td>0</td></tr>
+        <tr><td>2</td><td class="equipo"><a href="equipo.html?id=almeria">UD Almería</a></td><td>0</td></tr>
+        <tr><td>3</td><td class="equipo"><a href="equipo.html?id=andorra">FC Andorra</a></td><td>0</td></tr>
+        <tr><td>4</td><td class="equipo"><a href="equipo.html?id=burgos">Burgos CF</a></td><td>0</td></tr>
+        <tr><td>5</td><td class="equipo"><a href="equipo.html?id=cadiz">Cádiz CF</a></td><td>0</td></tr>
+        <tr><td>6</td><td class="equipo"><a href="equipo.html?id=castellon">CD Castellón</a></td><td>0</td></tr>
+        <tr><td>7</td><td class="equipo"><a href="equipo.html?id=celta-fortuna">RC Celta Fortuna</a></td><td>0</td></tr>
+        <tr><td>8</td><td class="equipo"><a href="equipo.html?id=ceuta">AD Ceuta FC</a></td><td>0</td></tr>
+        <tr><td>9</td><td class="equipo"><a href="equipo.html?id=cordoba">Córdoba CF</a></td><td>0</td></tr>
+        <tr><td>10</td><td class="equipo"><a href="equipo.html?id=eibar">SD Eibar</a></td><td>0</td></tr>
+        <tr><td>11</td><td class="equipo"><a href="equipo.html?id=eldense">CD Eldense</a></td><td>0</td></tr>
+        <tr><td>12</td><td class="equipo"><a href="equipo.html?id=girona">Girona FC</a></td><td>0</td></tr>
+        <tr><td>13</td><td class="equipo"><a href="equipo.html?id=granada">Granada CF</a></td><td>0</td></tr>
+        <tr><td>14</td><td class="equipo"><a href="equipo.html?id=las-palmas">UD Las Palmas</a></td><td>0</td></tr>
+        <tr><td>15</td><td class="equipo"><a href="equipo.html?id=mallorca">RCD Mallorca</a></td><td>0</td></tr>
+        <tr><td>16</td><td class="equipo"><a href="equipo.html?id=oviedo">Real Oviedo</a></td><td>0</td></tr>
+        <tr><td>17</td><td class="equipo"><a href="equipo.html?id=real-sociedad-b">Real Sociedad B</a></td><td>0</td></tr>
+        <tr><td>18</td><td class="equipo"><a href="equipo.html?id=sabadell">CE Sabadell FC</a></td><td>0</td></tr>
+        <tr><td>19</td><td class="equipo"><a href="equipo.html?id=sporting">Real Sporting de Gijón</a></td><td>0</td></tr>
+        <tr><td>20</td><td class="equipo"><a href="equipo.html?id=tenerife">CD Tenerife</a></td><td>0</td></tr>
+        <tr><td>21</td><td class="equipo"><a href="equipo.html?id=valladolid">Real Valladolid CF</a></td><td>0</td></tr>
+      </table>
+    </div>
+
+    <p class="nota">Tabla de pretemporada, orden alfabético (aún no se ha jugado ningún partido). En cuanto arranque la Jornada 1 el 15 de agosto, esta tabla se actualizará con los resultados reales.</p>
+  </div>
+
+  <footer>
+    Contacto: contacto@sudorygloria.com — Síguenos: Twitter | Instagram | Facebook
+  </footer>
+
+  <script>
+    function cambiarLiga(valor) {
+      document.getElementById('tabla-primera').style.display = valor === 'primera' ? 'block' : 'none';
+      document.getElementById('tabla-segunda').style.display = valor === 'segunda' ? 'block' : 'none';
+    }
+  </script>
+</body>
+</html>
