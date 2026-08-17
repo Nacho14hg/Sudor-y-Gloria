@@ -137,14 +137,22 @@
 
           <div class="panel" id="panel-plantilla">
             <h2>Plantilla 2026-27</h2>
-            <table class="generica">
-              <tr><th>Dorsal</th><th>Jugador</th><th>Posición</th></tr>
-              <tr><td>1</td><td>Por confirmar</td><td>Portero</td></tr>
-              <tr><td>4</td><td>Por confirmar</td><td>Defensa</td></tr>
-              <tr><td>8</td><td>Por confirmar</td><td>Centrocampista</td></tr>
-              <tr><td>9</td><td>Por confirmar</td><td>Delantero</td></tr>
-            </table>
-            <p class="nota">La plantilla oficial se confirma con el cierre del mercado de fichajes de verano.</p>
+            ${equipo.plantilla ? `
+              <table class="generica">
+                <tr><th>Dorsal</th><th>Jugador</th><th>Posición</th></tr>
+                ${equipo.plantilla.map(j => `<tr><td>${j.d || '-'}</td><td>${j.n}</td><td>${j.p}</td></tr>`).join('')}
+              </table>
+              <p class="nota">Plantilla real, actualizada a ${equipo.plantillaFecha || 'agosto de 2026'}. El mercado de fichajes de verano sigue abierto hasta el 1 de septiembre, así que puede haber cambios.</p>
+            ` : `
+              <table class="generica">
+                <tr><th>Dorsal</th><th>Jugador</th><th>Posición</th></tr>
+                <tr><td>1</td><td>Por confirmar</td><td>Portero</td></tr>
+                <tr><td>4</td><td>Por confirmar</td><td>Defensa</td></tr>
+                <tr><td>8</td><td>Por confirmar</td><td>Centrocampista</td></tr>
+                <tr><td>9</td><td>Por confirmar</td><td>Delantero</td></tr>
+              </table>
+              <p class="nota">Todavía no hemos actualizado la plantilla real de este equipo. La plantilla oficial se confirma con el cierre del mercado de fichajes de verano.</p>
+            `}
           </div>
 
           <div class="panel" id="panel-clasificacion">
