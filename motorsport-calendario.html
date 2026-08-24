@@ -79,7 +79,7 @@
 
   <div class="countdown-box">
     <h2>Próxima carrera</h2>
-    <div class="circuito">Gran Premio de Países Bajos — Zandvoort</div>
+    <div class="circuito">Gran Premio de Italia — Monza</div>
     <div class="countdown-nums">
       <div><div class="num" id="cd-dias">--</div><div class="lbl">Días</div></div>
       <div><div class="num" id="cd-horas">--</div><div class="lbl">Horas</div></div>
@@ -175,24 +175,17 @@
 
     <div style="text-align:center; color:#c62828; font-weight:bold; margin:20px 0;">— Parón de verano —</div>
 
-    <div class="gp-card proximo">
+    <div class="gp-card finalizado">
       <div class="gp-cabecera">
         <div><span class="ronda">RONDA 12</span> — <span class="pais">🇳🇱 Países Bajos · Zandvoort</span> <span class="etiqueta sprint">Sprint</span></div>
-        <div><span class="etiqueta proxima">En curso</span> <span class="fechas">21-23 agosto</span></div>
-      </div>
-      <div class="sesiones">
-        <div class="sesion"><div class="tipo">Libres 1 ✅</div><div class="dia-hora">Viernes 21/08, 12:30</div></div>
-        <div class="sesion"><div class="tipo">Sprint Qualy ✅</div><div class="dia-hora">Viernes 21/08, 16:30</div></div>
-        <div class="sesion"><div class="tipo">Sprint</div><div class="dia-hora">Sábado 22/08, 12:00</div></div>
-        <div class="sesion"><div class="tipo">Clasificación</div><div class="dia-hora">Sábado 22/08, 16:00</div></div>
-        <div class="sesion"><div class="tipo">Carrera</div><div class="dia-hora">Domingo 23/08, 15:00</div></div>
+        <div><span class="etiqueta finalizada">Finalizada</span> <span class="fechas">21-23 agosto</span></div>
       </div>
     </div>
 
-    <div class="gp-card">
+    <div class="gp-card proximo">
       <div class="gp-cabecera">
         <div><span class="ronda">RONDA 13</span> — <span class="pais">🇮🇹 Italia · Monza</span></div>
-        <div><span class="fechas">4-6 septiembre</span></div>
+        <div><span class="etiqueta proxima">Próxima</span> <span class="fechas">4-6 septiembre</span></div>
       </div>
       <div class="sesiones">
         <div class="sesion"><div class="tipo">Libres 1</div><div class="dia-hora">Viernes 12:30</div></div>
@@ -351,8 +344,8 @@
   </footer>
 
   <script>
-    // Carrera de Países Bajos (Zandvoort): domingo 23 de agosto de 2026, 15:00 hora peninsular española (CEST, UTC+2)
-    const fechaCarrera = new Date("2026-08-23T15:00:00+02:00").getTime();
+    // Carrera de Italia (Monza): domingo 6 de septiembre de 2026, 15:00 hora peninsular española (CEST, UTC+2)
+    const fechaCarrera = new Date("2026-09-06T15:00:00+02:00").getTime();
 
     function actualizarContador() {
       const ahora = new Date().getTime();
