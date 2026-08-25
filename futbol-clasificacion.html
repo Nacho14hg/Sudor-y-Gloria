@@ -27,6 +27,10 @@
     tr.europa-league { background:#ffe9d6; }
     tr.conference { background:#e2f7e6; }
     tr.descenso { background:#fde0e0; }
+    tr.ascenso-directo { background:#c8e6c9; }
+    tr.playoff { background:#e6f4ea; }
+    tr.ascenso-directo td:first-child { border-left:4px solid #1b6e2f; padding-left:4px; }
+    tr.playoff td:first-child { border-left:4px solid #4caf50; padding-left:4px; }
     tr.champions td:first-child, tr.europa-league td:first-child, tr.conference td:first-child, tr.descenso td:first-child {
       border-left:4px solid; padding-left:4px;
     }
@@ -101,14 +105,19 @@
     </div>
 
     <div id="tabla-segunda" style="display:none;">
+      <div class="leyenda">
+        <span><i style="background:#1b6e2f;"></i> Ascenso directo (1-2)</span>
+        <span><i style="background:#4caf50;"></i> Play-off de ascenso (3-6)</span>
+        <span><i style="background:#c62828;"></i> Descenso (19-22)</span>
+      </div>
       <table>
         <tr><th>#</th><th style="text-align:left;">Equipo</th><th>PJ</th><th>V</th><th>E</th><th>D</th><th>GF</th><th>GC</th><th>DG</th><th>Pts</th></tr>
-        <tr class=""><td>1</td><td class="equipo"><a href="equipo.html?id=tenerife"><img src="imgescudos/tenerife.png" onerror="this.style.display='none'">CD Tenerife</a></td><td>2</td><td>2</td><td>0</td><td>0</td><td>4</td><td>1</td><td>+3</td><td><strong>6</strong></td></tr>
-        <tr class=""><td>2</td><td class="equipo"><a href="equipo.html?id=las-palmas"><img src="imgescudos/Las-palmas.png" onerror="this.style.display='none'">UD Las Palmas</a></td><td>2</td><td>2</td><td>0</td><td>0</td><td>4</td><td>1</td><td>+3</td><td><strong>6</strong></td></tr>
-        <tr class=""><td>3</td><td class="equipo"><a href="equipo.html?id=andorra"><img src="imgescudos/Andorra.png" onerror="this.style.display='none'">FC Andorra</a></td><td>2</td><td>1</td><td>1</td><td>0</td><td>7</td><td>3</td><td>+4</td><td><strong>4</strong></td></tr>
-        <tr class=""><td>4</td><td class="equipo"><a href="equipo.html?id=leganes"><img src="imgescudos/Leganes.png" onerror="this.style.display='none'">CD Leganés</a></td><td>2</td><td>1</td><td>1</td><td>0</td><td>2</td><td>1</td><td>+1</td><td><strong>4</strong></td></tr>
-        <tr class=""><td>5</td><td class="equipo"><a href="equipo.html?id=sporting"><img src="imgescudos/Real-sporting.png" onerror="this.style.display='none'">Real Sporting</a></td><td>2</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>+1</td><td><strong>4</strong></td></tr>
-        <tr class=""><td>6</td><td class="equipo"><a href="equipo.html?id=castellon"><img src="imgescudos/Castellon.png" onerror="this.style.display='none'">CD Castellón</a></td><td>2</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>+1</td><td><strong>4</strong></td></tr>
+        <tr class="ascenso-directo"><td>1</td><td class="equipo"><a href="equipo.html?id=tenerife"><img src="imgescudos/tenerife.png" onerror="this.style.display='none'">CD Tenerife</a></td><td>2</td><td>2</td><td>0</td><td>0</td><td>4</td><td>1</td><td>+3</td><td><strong>6</strong></td></tr>
+        <tr class="ascenso-directo"><td>2</td><td class="equipo"><a href="equipo.html?id=las-palmas"><img src="imgescudos/Las-palmas.png" onerror="this.style.display='none'">UD Las Palmas</a></td><td>2</td><td>2</td><td>0</td><td>0</td><td>4</td><td>1</td><td>+3</td><td><strong>6</strong></td></tr>
+        <tr class="playoff"><td>3</td><td class="equipo"><a href="equipo.html?id=andorra"><img src="imgescudos/Andorra.png" onerror="this.style.display='none'">FC Andorra</a></td><td>2</td><td>1</td><td>1</td><td>0</td><td>7</td><td>3</td><td>+4</td><td><strong>4</strong></td></tr>
+        <tr class="playoff"><td>4</td><td class="equipo"><a href="equipo.html?id=leganes"><img src="imgescudos/Leganes.png" onerror="this.style.display='none'">CD Leganés</a></td><td>2</td><td>1</td><td>1</td><td>0</td><td>2</td><td>1</td><td>+1</td><td><strong>4</strong></td></tr>
+        <tr class="playoff"><td>5</td><td class="equipo"><a href="equipo.html?id=sporting"><img src="imgescudos/Real-sporting.png" onerror="this.style.display='none'">Real Sporting</a></td><td>2</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>+1</td><td><strong>4</strong></td></tr>
+        <tr class="playoff"><td>6</td><td class="equipo"><a href="equipo.html?id=castellon"><img src="imgescudos/Castellon.png" onerror="this.style.display='none'">CD Castellón</a></td><td>2</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>+1</td><td><strong>4</strong></td></tr>
         <tr class=""><td>7</td><td class="equipo"><a href="equipo.html?id=almeria"><img src="imgescudos/UD-Almería.png" onerror="this.style.display='none'">UD Almería</a></td><td>2</td><td>1</td><td>0</td><td>1</td><td>3</td><td>1</td><td>+2</td><td><strong>3</strong></td></tr>
         <tr class=""><td>8</td><td class="equipo"><a href="equipo.html?id=mallorca"><img src="imgescudos/Mallorca.png" onerror="this.style.display='none'">RCD Mallorca</a></td><td>1</td><td>1</td><td>0</td><td>0</td><td>2</td><td>0</td><td>+2</td><td><strong>3</strong></td></tr>
         <tr class=""><td>9</td><td class="equipo"><a href="equipo.html?id=cordoba"><img src="imgescudos/Cordoba.png" onerror="this.style.display='none'">Córdoba CF</a></td><td>2</td><td>1</td><td>0</td><td>1</td><td>4</td><td>4</td><td>0</td><td><strong>3</strong></td></tr>
@@ -121,10 +130,10 @@
         <tr class=""><td>16</td><td class="equipo"><a href="equipo.html?id=granada"><img src="imgescudos/Granada.png" onerror="this.style.display='none'">Granada CF</a></td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td><strong>1</strong></td></tr>
         <tr class=""><td>17</td><td class="equipo"><a href="equipo.html?id=girona"><img src="imgescudos/Girona.png" onerror="this.style.display='none'">Girona FC</a></td><td>2</td><td>0</td><td>1</td><td>1</td><td>2</td><td>3</td><td>-1</td><td><strong>1</strong></td></tr>
         <tr class=""><td>18</td><td class="equipo"><a href="equipo.html?id=oviedo"><img src="imgescudos/Real-oviedo.png" onerror="this.style.display='none'">Real Oviedo</a></td><td>2</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>-1</td><td><strong>1</strong></td></tr>
-        <tr class=""><td>19</td><td class="equipo"><a href="equipo.html?id=eldense"><img src="imgescudos/eldense.png" onerror="this.style.display='none'">CD Eldense</a></td><td>2</td><td>0</td><td>1</td><td>1</td><td>2</td><td>5</td><td>-3</td><td><strong>1</strong></td></tr>
-        <tr class=""><td>20</td><td class="equipo"><a href="equipo.html?id=albacete"><img src="imgescudos/Albacete.png" onerror="this.style.display='none'">UD Albacete Balompié</a></td><td>2</td><td>0</td><td>0</td><td>2</td><td>2</td><td>4</td><td>-2</td><td><strong>0</strong></td></tr>
-        <tr class=""><td>21</td><td class="equipo"><a href="equipo.html?id=valladolid"><img src="imgescudos/Valladolid.png" onerror="this.style.display='none'">Real Valladolid CF</a></td><td>2</td><td>0</td><td>0</td><td>2</td><td>0</td><td>3</td><td>-3</td><td><strong>0</strong></td></tr>
-        <tr class=""><td>22</td><td class="equipo"><a href="equipo.html?id=ceuta"><img src="imgescudos/Ceuta.png" onerror="this.style.display='none'">AD Ceuta FC</a></td><td>2</td><td>0</td><td>0</td><td>2</td><td>1</td><td>7</td><td>-6</td><td><strong>0</strong></td></tr>
+        <tr class="descenso"><td>19</td><td class="equipo"><a href="equipo.html?id=eldense"><img src="imgescudos/eldense.png" onerror="this.style.display='none'">CD Eldense</a></td><td>2</td><td>0</td><td>1</td><td>1</td><td>2</td><td>5</td><td>-3</td><td><strong>1</strong></td></tr>
+        <tr class="descenso"><td>20</td><td class="equipo"><a href="equipo.html?id=albacete"><img src="imgescudos/Albacete.png" onerror="this.style.display='none'">UD Albacete Balompié</a></td><td>2</td><td>0</td><td>0</td><td>2</td><td>2</td><td>4</td><td>-2</td><td><strong>0</strong></td></tr>
+        <tr class="descenso"><td>21</td><td class="equipo"><a href="equipo.html?id=valladolid"><img src="imgescudos/Valladolid.png" onerror="this.style.display='none'">Real Valladolid CF</a></td><td>2</td><td>0</td><td>0</td><td>2</td><td>0</td><td>3</td><td>-3</td><td><strong>0</strong></td></tr>
+        <tr class="descenso"><td>22</td><td class="equipo"><a href="equipo.html?id=ceuta"><img src="imgescudos/Ceuta.png" onerror="this.style.display='none'">AD Ceuta FC</a></td><td>2</td><td>0</td><td>0</td><td>2</td><td>1</td><td>7</td><td>-6</td><td><strong>0</strong></td></tr>
       </table>
     </div>
 
