@@ -20,15 +20,36 @@
       font-size:1rem; padding:8px 16px; border-radius:20px; border:2px solid #c62828;
       color:#c62828; font-weight:bold; background:#fff; cursor:pointer;
     }
-    .contenido { max-width:700px; margin:0 auto; padding:0 20px 30px; }
-    .partido {
-      display:flex; justify-content:space-between; align-items:center; gap:10px;
-      border:1px solid #eee; border-radius:8px; padding:12px 16px; margin-bottom:10px;
+    .contenido { max-width:750px; margin:0 auto; padding:0 20px 30px; }
+
+    .jornada { margin-bottom:10px; border:1px solid #eee; border-radius:8px; overflow:hidden; }
+    .jornada-titulo {
+      width:100%; text-align:left; background:#f7f7f7; border:none; padding:14px 18px;
+      font-weight:bold; font-size:1rem; cursor:pointer; color:#111;
+      display:flex; justify-content:space-between; align-items:center;
     }
-    .partido.confirmado { border-left:5px solid #c62828; }
-    .partido .equipos { font-weight:bold; }
-    .partido .fecha { font-size:0.85rem; color:#666; text-align:right; }
-    .pendiente { color:#999; font-style:italic; text-align:center; padding:14px; font-size:0.9rem; }
+    .jornada-titulo:hover { background:#eee; }
+    .jornada-titulo .flecha { transition: transform 0.2s; }
+    .jornada-titulo.activo .flecha { transform: rotate(180deg); }
+
+    .partido {
+      display:flex; align-items:center; justify-content:space-between;
+      padding:10px 18px; border-top:1px solid #f0f0f0; font-size:0.88rem; gap:8px;
+    }
+    .equipo-local, .equipo-visitante { flex:1; display:flex; align-items:center; gap:8px; }
+    .equipo-visitante { justify-content:flex-end; text-align:right; }
+    .partido a { color:#111; text-decoration:none; display:flex; align-items:center; gap:8px; }
+    .partido a:hover { color:#c62828; }
+    .partido img { height:24px; width:24px; object-fit:contain; }
+    .resultado {
+      font-weight:bold; background:#111; color:#fff; padding:4px 12px; border-radius:6px;
+      min-width:60px; text-align:center; flex-shrink:0;
+    }
+    .fecha-partido {
+      font-size:0.78rem; color:#555; min-width:110px; text-align:center; flex-shrink:0;
+    }
+    .fecha-partido.pendiente { color:#aaa; font-style:italic; }
+
     .nota { color:#888; font-size:0.82rem; margin-top:16px; text-align:center; }
     footer { background:#c62828; color:#fff; text-align:center; padding:20px; margin-top:40px; }
   </style>
@@ -44,47 +65,563 @@
   </nav>
 
   <div class="hero">
-    <h1>Calendario — Jornada 1</h1>
-    <p>Temporada 2026-27</p>
-  </div>
-
-  <div class="selector">
-    <select id="selector-liga" onchange="cambiarLiga(this.value)">
-      <option value="primera">LALIGA EA Sports (Primera)</option>
-      <option value="segunda">LALIGA Hypermotion (Segunda)</option>
-    </select>
+    <h1>Calendario — LALIGA EA Sports 2026-27</h1>
+    <p>Jornadas 1 a 10 de 38 · pincha en una jornada para desplegarla</p>
   </div>
 
   <div class="contenido">
-    <div id="cal-primera">
-      <div class="partido confirmado">
-        <div class="equipos">Deportivo Alavés vs. Getafe CF</div>
-        <div class="fecha">Sáb 15 agosto<br>19:00</div>
+    <div class="jornada">
+      <button class="jornada-titulo activo" onclick="toggleJornada(this)">Jornada 1 — domingo, 16 de agosto de 2026<span class="flecha">▾</span></button>
+      <div class="jornada-partidos" style="display:block;">
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=alaves"><img src="imgescudos/Alaves.png" onerror="this.style.display='none'">Deportivo Alavés</a></div>
+          <div class="resultado">3-0</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=getafe">Getafe CF<img src="imgescudos/Getafe.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=atletico-madrid"><img src="imgescudos/Atletico-de-madrid.png" onerror="this.style.display='none'">Atlético de Madrid</a></div>
+          <div class="resultado">2-0</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=malaga">Málaga CF<img src="imgescudos/Malaga.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=celta"><img src="imgescudos/Celta.png" onerror="this.style.display='none'">RC Celta de Vigo</a></div>
+          <div class="fecha-partido">27 ago, 20:30</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=osasuna">CA Osasuna<img src="imgescudos/osasuna.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=deportivo"><img src="imgescudos/Deportivo.png" onerror="this.style.display='none'">RC Deportivo</a></div>
+          <div class="resultado">1-1</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=elche">Elche CF<img src="imgescudos/Elche.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=espanyol"><img src="imgescudos/Espanyol.png" onerror="this.style.display='none'">RCD Espanyol</a></div>
+          <div class="resultado">3-0</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=levante">Levante UD<img src="imgescudos/Levante.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=barcelona"><img src="imgescudos/Barcelona.png" onerror="this.style.display='none'">FC Barcelona</a></div>
+          <div class="fecha-partido">27 ago, 21:00</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=athletic-club">Athletic Club<img src="imgescudos/Athletic-club.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=racing-santander"><img src="imgescudos/Racing-santander.png" onerror="this.style.display='none'">Racing Santander</a></div>
+          <div class="resultado">2-2</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=villarreal">Villarreal CF<img src="imgescudos/Villarreal.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=real-madrid"><img src="imgescudos/Real-madrid.png" onerror="this.style.display='none'">Real Madrid</a></div>
+          <div class="fecha-partido">26 ago, 21:00</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=real-sociedad">Real Sociedad<img src="imgescudos/Real-Sociedad.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=sevilla"><img src="imgescudos/Sevilla.png" onerror="this.style.display='none'">Sevilla FC</a></div>
+          <div class="resultado">2-1</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=rayo-vallecano">Rayo Vallecano<img src="imgescudos/Rayo-vallecano.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=valencia"><img src="imgescudos/Valencia.png" onerror="this.style.display='none'">Valencia CF</a></div>
+          <div class="fecha-partido">25 ago, 21:00</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=real-betis">Real Betis<img src="imgescudos/Betis.png" onerror="this.style.display='none'"></a></div>
+        </div>
       </div>
-      <div class="partido confirmado">
-        <div class="equipos">Sevilla FC vs. Rayo Vallecano</div>
-        <div class="fecha">Sáb 15 agosto</div>
+    </div>
+    <div class="jornada">
+      <button class="jornada-titulo " onclick="toggleJornada(this)">Jornada 2 — domingo, 23 de agosto de 2026<span class="flecha">▾</span></button>
+      <div class="jornada-partidos" style="display:none;">
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=athletic-club"><img src="imgescudos/Athletic-club.png" onerror="this.style.display='none'">Athletic Club</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=sevilla">Sevilla FC<img src="imgescudos/Sevilla.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=atletico-madrid"><img src="imgescudos/Atletico-de-madrid.png" onerror="this.style.display='none'">Atlético de Madrid</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=villarreal">Villarreal CF<img src="imgescudos/Villarreal.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=real-betis"><img src="imgescudos/Betis.png" onerror="this.style.display='none'">Real Betis</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=real-sociedad">Real Sociedad<img src="imgescudos/Real-Sociedad.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=elche"><img src="imgescudos/Elche.png" onerror="this.style.display='none'">Elche CF</a></div>
+          <div class="resultado">0-5</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=barcelona">FC Barcelona<img src="imgescudos/Barcelona.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=espanyol"><img src="imgescudos/Espanyol.png" onerror="this.style.display='none'">RCD Espanyol</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=real-madrid">Real Madrid<img src="imgescudos/Real-madrid.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=getafe"><img src="imgescudos/Getafe.png" onerror="this.style.display='none'">Getafe CF</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=racing-santander">Racing Santander<img src="imgescudos/Racing-santander.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=malaga"><img src="imgescudos/Malaga.png" onerror="this.style.display='none'">Málaga CF</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=deportivo">RC Deportivo<img src="imgescudos/Deportivo.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=osasuna"><img src="imgescudos/osasuna.png" onerror="this.style.display='none'">CA Osasuna</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=levante">Levante UD<img src="imgescudos/Levante.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=rayo-vallecano"><img src="imgescudos/Rayo-vallecano.png" onerror="this.style.display='none'">Rayo Vallecano</a></div>
+          <div class="resultado">1-1</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=alaves">Deportivo Alavés<img src="imgescudos/Alaves.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=valencia"><img src="imgescudos/Valencia.png" onerror="this.style.display='none'">Valencia CF</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=celta">RC Celta de Vigo<img src="imgescudos/Celta.png" onerror="this.style.display='none'"></a></div>
+        </div>
       </div>
-      <div class="partido confirmado">
-        <div class="equipos">FC Barcelona vs. Athletic Club</div>
-        <div class="fecha">Jue 27 agosto<br>21:00</div>
+    </div>
+    <div class="jornada">
+      <button class="jornada-titulo " onclick="toggleJornada(this)">Jornada 3 — domingo, 30 de agosto de 2026<span class="flecha">▾</span></button>
+      <div class="jornada-partidos" style="display:none;">
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=alaves"><img src="imgescudos/Alaves.png" onerror="this.style.display='none'">Deportivo Alavés</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=villarreal">Villarreal CF<img src="imgescudos/Villarreal.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=celta"><img src="imgescudos/Celta.png" onerror="this.style.display='none'">RC Celta de Vigo</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=athletic-club">Athletic Club<img src="imgescudos/Athletic-club.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=deportivo"><img src="imgescudos/Deportivo.png" onerror="this.style.display='none'">RC Deportivo</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=valencia">Valencia CF<img src="imgescudos/Valencia.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=barcelona"><img src="imgescudos/Barcelona.png" onerror="this.style.display='none'">FC Barcelona</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=rayo-vallecano">Rayo Vallecano<img src="imgescudos/Rayo-vallecano.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=levante"><img src="imgescudos/Levante.png" onerror="this.style.display='none'">Levante UD</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=real-betis">Real Betis<img src="imgescudos/Betis.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=osasuna"><img src="imgescudos/osasuna.png" onerror="this.style.display='none'">CA Osasuna</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=getafe">Getafe CF<img src="imgescudos/Getafe.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=racing-santander"><img src="imgescudos/Racing-santander.png" onerror="this.style.display='none'">Racing Santander</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=elche">Elche CF<img src="imgescudos/Elche.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=real-madrid"><img src="imgescudos/Real-madrid.png" onerror="this.style.display='none'">Real Madrid</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=malaga">Málaga CF<img src="imgescudos/Malaga.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=real-sociedad"><img src="imgescudos/Real-Sociedad.png" onerror="this.style.display='none'">Real Sociedad</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=espanyol">RCD Espanyol<img src="imgescudos/Espanyol.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=sevilla"><img src="imgescudos/Sevilla.png" onerror="this.style.display='none'">Sevilla FC</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=atletico-madrid">Atlético de Madrid<img src="imgescudos/Atletico-de-madrid.png" onerror="this.style.display='none'"></a></div>
+        </div>
       </div>
-      <div class="pendiente">
-        Faltan 7 partidos de la Jornada 1 por confirmar horario oficial<br>
-        (Real Madrid, Atlético, Real Sociedad, Betis, Villarreal, Valencia, Osasuna, Espanyol,
-        Elche, Levante, Málaga, Celta, Racing y Deportivo, entre el 15 y el 27 de agosto).
+    </div>
+    <div class="jornada">
+      <button class="jornada-titulo " onclick="toggleJornada(this)">Jornada 4 — domingo, 6 de septiembre de 2026<span class="flecha">▾</span></button>
+      <div class="jornada-partidos" style="display:none;">
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=alaves"><img src="imgescudos/Alaves.png" onerror="this.style.display='none'">Deportivo Alavés</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=osasuna">CA Osasuna<img src="imgescudos/osasuna.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=athletic-club"><img src="imgescudos/Athletic-club.png" onerror="this.style.display='none'">Athletic Club</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=atletico-madrid">Atlético de Madrid<img src="imgescudos/Atletico-de-madrid.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=real-betis"><img src="imgescudos/Betis.png" onerror="this.style.display='none'">Real Betis</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=real-madrid">Real Madrid<img src="imgescudos/Real-madrid.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=elche"><img src="imgescudos/Elche.png" onerror="this.style.display='none'">Elche CF</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=real-sociedad">Real Sociedad<img src="imgescudos/Real-Sociedad.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=espanyol"><img src="imgescudos/Espanyol.png" onerror="this.style.display='none'">RCD Espanyol</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=sevilla">Sevilla FC<img src="imgescudos/Sevilla.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=getafe"><img src="imgescudos/Getafe.png" onerror="this.style.display='none'">Getafe CF</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=celta">RC Celta de Vigo<img src="imgescudos/Celta.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=malaga"><img src="imgescudos/Malaga.png" onerror="this.style.display='none'">Málaga CF</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=levante">Levante UD<img src="imgescudos/Levante.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=rayo-vallecano"><img src="imgescudos/Rayo-vallecano.png" onerror="this.style.display='none'">Rayo Vallecano</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=racing-santander">Racing Santander<img src="imgescudos/Racing-santander.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=valencia"><img src="imgescudos/Valencia.png" onerror="this.style.display='none'">Valencia CF</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=barcelona">FC Barcelona<img src="imgescudos/Barcelona.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=villarreal"><img src="imgescudos/Villarreal.png" onerror="this.style.display='none'">Villarreal CF</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=deportivo">RC Deportivo<img src="imgescudos/Deportivo.png" onerror="this.style.display='none'"></a></div>
+        </div>
+      </div>
+    </div>
+    <div class="jornada">
+      <button class="jornada-titulo " onclick="toggleJornada(this)">Jornada 5 — domingo, 13 de septiembre de 2026<span class="flecha">▾</span></button>
+      <div class="jornada-partidos" style="display:none;">
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=athletic-club"><img src="imgescudos/Athletic-club.png" onerror="this.style.display='none'">Athletic Club</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=elche">Elche CF<img src="imgescudos/Elche.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=celta"><img src="imgescudos/Celta.png" onerror="this.style.display='none'">RC Celta de Vigo</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=malaga">Málaga CF<img src="imgescudos/Malaga.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=getafe"><img src="imgescudos/Getafe.png" onerror="this.style.display='none'">Getafe CF</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=deportivo">RC Deportivo<img src="imgescudos/Deportivo.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=levante"><img src="imgescudos/Levante.png" onerror="this.style.display='none'">Levante UD</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=barcelona">FC Barcelona<img src="imgescudos/Barcelona.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=osasuna"><img src="imgescudos/osasuna.png" onerror="this.style.display='none'">CA Osasuna</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=espanyol">RCD Espanyol<img src="imgescudos/Espanyol.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=racing-santander"><img src="imgescudos/Racing-santander.png" onerror="this.style.display='none'">Racing Santander</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=alaves">Deportivo Alavés<img src="imgescudos/Alaves.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=real-madrid"><img src="imgescudos/Real-madrid.png" onerror="this.style.display='none'">Real Madrid</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=rayo-vallecano">Rayo Vallecano<img src="imgescudos/Rayo-vallecano.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=real-sociedad"><img src="imgescudos/Real-Sociedad.png" onerror="this.style.display='none'">Real Sociedad</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=atletico-madrid">Atlético de Madrid<img src="imgescudos/Atletico-de-madrid.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=sevilla"><img src="imgescudos/Sevilla.png" onerror="this.style.display='none'">Sevilla FC</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=valencia">Valencia CF<img src="imgescudos/Valencia.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=villarreal"><img src="imgescudos/Villarreal.png" onerror="this.style.display='none'">Villarreal CF</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=real-betis">Real Betis<img src="imgescudos/Betis.png" onerror="this.style.display='none'"></a></div>
+        </div>
+      </div>
+    </div>
+    <div class="jornada">
+      <button class="jornada-titulo " onclick="toggleJornada(this)">Jornada 6 — miércoles, 16 de septiembre de 2026<span class="flecha">▾</span></button>
+      <div class="jornada-partidos" style="display:none;">
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=alaves"><img src="imgescudos/Alaves.png" onerror="this.style.display='none'">Deportivo Alavés</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=valencia">Valencia CF<img src="imgescudos/Valencia.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=atletico-madrid"><img src="imgescudos/Atletico-de-madrid.png" onerror="this.style.display='none'">Atlético de Madrid</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=osasuna">CA Osasuna<img src="imgescudos/osasuna.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=real-betis"><img src="imgescudos/Betis.png" onerror="this.style.display='none'">Real Betis</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=getafe">Getafe CF<img src="imgescudos/Getafe.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=deportivo"><img src="imgescudos/Deportivo.png" onerror="this.style.display='none'">RC Deportivo</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=sevilla">Sevilla FC<img src="imgescudos/Sevilla.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=elche"><img src="imgescudos/Elche.png" onerror="this.style.display='none'">Elche CF</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=real-madrid">Real Madrid<img src="imgescudos/Real-madrid.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=barcelona"><img src="imgescudos/Barcelona.png" onerror="this.style.display='none'">FC Barcelona</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=racing-santander">Racing Santander<img src="imgescudos/Racing-santander.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=levante"><img src="imgescudos/Levante.png" onerror="this.style.display='none'">Levante UD</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=athletic-club">Athletic Club<img src="imgescudos/Athletic-club.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=malaga"><img src="imgescudos/Malaga.png" onerror="this.style.display='none'">Málaga CF</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=villarreal">Villarreal CF<img src="imgescudos/Villarreal.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=rayo-vallecano"><img src="imgescudos/Rayo-vallecano.png" onerror="this.style.display='none'">Rayo Vallecano</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=espanyol">RCD Espanyol<img src="imgescudos/Espanyol.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=real-sociedad"><img src="imgescudos/Real-Sociedad.png" onerror="this.style.display='none'">Real Sociedad</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=celta">RC Celta de Vigo<img src="imgescudos/Celta.png" onerror="this.style.display='none'"></a></div>
+        </div>
+      </div>
+    </div>
+    <div class="jornada">
+      <button class="jornada-titulo " onclick="toggleJornada(this)">Jornada 7 — domingo, 20 de septiembre de 2026<span class="flecha">▾</span></button>
+      <div class="jornada-partidos" style="display:none;">
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=athletic-club"><img src="imgescudos/Athletic-club.png" onerror="this.style.display='none'">Athletic Club</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=alaves">Deportivo Alavés<img src="imgescudos/Alaves.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=atletico-madrid"><img src="imgescudos/Atletico-de-madrid.png" onerror="this.style.display='none'">Atlético de Madrid</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=real-madrid">Real Madrid<img src="imgescudos/Real-madrid.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=celta"><img src="imgescudos/Celta.png" onerror="this.style.display='none'">RC Celta de Vigo</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=racing-santander">Racing Santander<img src="imgescudos/Racing-santander.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=deportivo"><img src="imgescudos/Deportivo.png" onerror="this.style.display='none'">RC Deportivo</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=real-betis">Real Betis<img src="imgescudos/Betis.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=espanyol"><img src="imgescudos/Espanyol.png" onerror="this.style.display='none'">RCD Espanyol</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=elche">Elche CF<img src="imgescudos/Elche.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=getafe"><img src="imgescudos/Getafe.png" onerror="this.style.display='none'">Getafe CF</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=malaga">Málaga CF<img src="imgescudos/Malaga.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=osasuna"><img src="imgescudos/osasuna.png" onerror="this.style.display='none'">CA Osasuna</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=rayo-vallecano">Rayo Vallecano<img src="imgescudos/Rayo-vallecano.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=sevilla"><img src="imgescudos/Sevilla.png" onerror="this.style.display='none'">Sevilla FC</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=barcelona">FC Barcelona<img src="imgescudos/Barcelona.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=valencia"><img src="imgescudos/Valencia.png" onerror="this.style.display='none'">Valencia CF</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=real-sociedad">Real Sociedad<img src="imgescudos/Real-Sociedad.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=villarreal"><img src="imgescudos/Villarreal.png" onerror="this.style.display='none'">Villarreal CF</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=levante">Levante UD<img src="imgescudos/Levante.png" onerror="this.style.display='none'"></a></div>
+        </div>
+      </div>
+    </div>
+    <div class="jornada">
+      <button class="jornada-titulo " onclick="toggleJornada(this)">Jornada 8 — domingo, 11 de octubre de 2026<span class="flecha">▾</span></button>
+      <div class="jornada-partidos" style="display:none;">
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=alaves"><img src="imgescudos/Alaves.png" onerror="this.style.display='none'">Deportivo Alavés</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=atletico-madrid">Atlético de Madrid<img src="imgescudos/Atletico-de-madrid.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=real-betis"><img src="imgescudos/Betis.png" onerror="this.style.display='none'">Real Betis</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=osasuna">CA Osasuna<img src="imgescudos/osasuna.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=elche"><img src="imgescudos/Elche.png" onerror="this.style.display='none'">Elche CF</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=celta">RC Celta de Vigo<img src="imgescudos/Celta.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=barcelona"><img src="imgescudos/Barcelona.png" onerror="this.style.display='none'">FC Barcelona</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=getafe">Getafe CF<img src="imgescudos/Getafe.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=levante"><img src="imgescudos/Levante.png" onerror="this.style.display='none'">Levante UD</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=sevilla">Sevilla FC<img src="imgescudos/Sevilla.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=malaga"><img src="imgescudos/Malaga.png" onerror="this.style.display='none'">Málaga CF</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=espanyol">RCD Espanyol<img src="imgescudos/Espanyol.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=racing-santander"><img src="imgescudos/Racing-santander.png" onerror="this.style.display='none'">Racing Santander</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=valencia">Valencia CF<img src="imgescudos/Valencia.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=rayo-vallecano"><img src="imgescudos/Rayo-vallecano.png" onerror="this.style.display='none'">Rayo Vallecano</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=athletic-club">Athletic Club<img src="imgescudos/Athletic-club.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=real-madrid"><img src="imgescudos/Real-madrid.png" onerror="this.style.display='none'">Real Madrid</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=villarreal">Villarreal CF<img src="imgescudos/Villarreal.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=real-sociedad"><img src="imgescudos/Real-Sociedad.png" onerror="this.style.display='none'">Real Sociedad</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=deportivo">RC Deportivo<img src="imgescudos/Deportivo.png" onerror="this.style.display='none'"></a></div>
+        </div>
+      </div>
+    </div>
+    <div class="jornada">
+      <button class="jornada-titulo " onclick="toggleJornada(this)">Jornada 9 — domingo, 18 de octubre de 2026<span class="flecha">▾</span></button>
+      <div class="jornada-partidos" style="display:none;">
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=real-betis"><img src="imgescudos/Betis.png" onerror="this.style.display='none'">Real Betis</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=barcelona">FC Barcelona<img src="imgescudos/Barcelona.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=celta"><img src="imgescudos/Celta.png" onerror="this.style.display='none'">RC Celta de Vigo</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=alaves">Deportivo Alavés<img src="imgescudos/Alaves.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=deportivo"><img src="imgescudos/Deportivo.png" onerror="this.style.display='none'">RC Deportivo</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=levante">Levante UD<img src="imgescudos/Levante.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=espanyol"><img src="imgescudos/Espanyol.png" onerror="this.style.display='none'">RCD Espanyol</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=atletico-madrid">Atlético de Madrid<img src="imgescudos/Atletico-de-madrid.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=getafe"><img src="imgescudos/Getafe.png" onerror="this.style.display='none'">Getafe CF</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=rayo-vallecano">Rayo Vallecano<img src="imgescudos/Rayo-vallecano.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=malaga"><img src="imgescudos/Malaga.png" onerror="this.style.display='none'">Málaga CF</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=real-sociedad">Real Sociedad<img src="imgescudos/Real-Sociedad.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=osasuna"><img src="imgescudos/osasuna.png" onerror="this.style.display='none'">CA Osasuna</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=racing-santander">Racing Santander<img src="imgescudos/Racing-santander.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=real-madrid"><img src="imgescudos/Real-madrid.png" onerror="this.style.display='none'">Real Madrid</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=sevilla">Sevilla FC<img src="imgescudos/Sevilla.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=valencia"><img src="imgescudos/Valencia.png" onerror="this.style.display='none'">Valencia CF</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=athletic-club">Athletic Club<img src="imgescudos/Athletic-club.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=villarreal"><img src="imgescudos/Villarreal.png" onerror="this.style.display='none'">Villarreal CF</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=elche">Elche CF<img src="imgescudos/Elche.png" onerror="this.style.display='none'"></a></div>
+        </div>
+      </div>
+    </div>
+    <div class="jornada">
+      <button class="jornada-titulo " onclick="toggleJornada(this)">Jornada 10 — domingo, 25 de octubre de 2026<span class="flecha">▾</span></button>
+      <div class="jornada-partidos" style="display:none;">
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=alaves"><img src="imgescudos/Alaves.png" onerror="this.style.display='none'">Deportivo Alavés</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=malaga">Málaga CF<img src="imgescudos/Malaga.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=athletic-club"><img src="imgescudos/Athletic-club.png" onerror="this.style.display='none'">Athletic Club</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=getafe">Getafe CF<img src="imgescudos/Getafe.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=atletico-madrid"><img src="imgescudos/Atletico-de-madrid.png" onerror="this.style.display='none'">Atlético de Madrid</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=deportivo">RC Deportivo<img src="imgescudos/Deportivo.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=celta"><img src="imgescudos/Celta.png" onerror="this.style.display='none'">RC Celta de Vigo</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=real-betis">Real Betis<img src="imgescudos/Betis.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=barcelona"><img src="imgescudos/Barcelona.png" onerror="this.style.display='none'">FC Barcelona</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=real-madrid">Real Madrid<img src="imgescudos/Real-madrid.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=racing-santander"><img src="imgescudos/Racing-santander.png" onerror="this.style.display='none'">Racing Santander</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=espanyol">RCD Espanyol<img src="imgescudos/Espanyol.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=rayo-vallecano"><img src="imgescudos/Rayo-vallecano.png" onerror="this.style.display='none'">Rayo Vallecano</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=elche">Elche CF<img src="imgescudos/Elche.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=real-sociedad"><img src="imgescudos/Real-Sociedad.png" onerror="this.style.display='none'">Real Sociedad</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=levante">Levante UD<img src="imgescudos/Levante.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=sevilla"><img src="imgescudos/Sevilla.png" onerror="this.style.display='none'">Sevilla FC</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=osasuna">CA Osasuna<img src="imgescudos/osasuna.png" onerror="this.style.display='none'"></a></div>
+        </div>
+        <div class="partido">
+          <div class="equipo-local"><a href="equipo.html?id=valencia"><img src="imgescudos/Valencia.png" onerror="this.style.display='none'">Valencia CF</a></div>
+          <div class="fecha-partido pendiente">Hora por confirmar</div>
+          <div class="equipo-visitante"><a href="equipo.html?id=villarreal">Villarreal CF<img src="imgescudos/Villarreal.png" onerror="this.style.display='none'"></a></div>
+        </div>
       </div>
     </div>
 
-    <div id="cal-segunda" style="display:none;">
-      <div class="pendiente">
-        LALIGA Hypermotion también arranca el fin de semana del 15-16 de agosto, pero LaLiga
-        todavía no ha publicado los horarios oficiales partido a partido de la Jornada 1
-        de Segunda División. En cuanto se confirmen, se actualizan aquí.
-      </div>
-    </div>
-
-    <p class="nota">Fuente: LaLiga.com. Actualiza esta página cerca del 15 de agosto para ver el resto de horarios confirmados.</p>
+    <p class="nota">Fuente: calendario oficial LaLiga 2026-27. Resultados y horarios actualizados a 25 de agosto de 2026. Próximamente: jornadas 11 a 38.</p>
   </div>
 
   <footer>
@@ -92,9 +629,11 @@
   </footer>
 
   <script>
-    function cambiarLiga(valor) {
-      document.getElementById('cal-primera').style.display = valor === 'primera' ? 'block' : 'none';
-      document.getElementById('cal-segunda').style.display = valor === 'segunda' ? 'block' : 'none';
+    function toggleJornada(btn) {
+      const panel = btn.nextElementSibling;
+      const abierto = panel.style.display === 'block';
+      panel.style.display = abierto ? 'none' : 'block';
+      btn.classList.toggle('activo', !abierto);
     }
   </script>
 </body>
