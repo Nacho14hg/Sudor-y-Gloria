@@ -38,7 +38,7 @@ const EQUIPOS = {
     {d:29, n:"Endrick", p:"Delantero"},
     {d:40, n:"Carlos Espí", p:"Delantero"}
   ] },
-  "barcelona": { nombre:"FC Barcelona", division:"Primera", escudoLocal:"imgescudos/Barcelona.png", fundacion:1899, ciudad:"Barcelona", estadio:"Spotify Camp Nou", apodo:"Los Blaugrana", palmares:["Liga: 28 títulos","Copa del Rey: 32 títulos (récord)","Champions League: 5 títulos"], noticiasReales:[{titulo:"El Barça inicia la liga con goleada", resumen:"Manita en el Martínez Valero (0-5) con doblete de Raphinha y Fermín, y debut con asistencia de Anthony Gordon.", link:"barca-elche.html"}], noticia:"El Barça vuelve a jugar en el remodelado Spotify Camp Nou tras las obras de renovación, con Hansi Flick al frente del proyecto.", plantillaFecha:"16 de agosto de 2026", plantilla:[
+  "barcelona": { nombre:"FC Barcelona", division:"Primera", escudoLocal:"imgescudos/Barcelona.png", fundacion:1899, ciudad:"Barcelona", estadio:"Spotify Camp Nou", apodo:"Los Blaugrana", palmares:["Liga: 28 títulos","Copa del Rey: 32 títulos (récord)","Champions League: 5 títulos"], noticiasReales:[{titulo:"El balón de oro ya está aquí: el Barça gana con comodidad al Athletic Club", resumen:"Victoria 2-0 en el Camp Nou con goles de Raphinha y Fermín López, y debut de Rodrigo Hernández Cascante.", link:"barca-bilbao.html"},{titulo:"El Barça inicia la liga con goleada", resumen:"Manita en el Martínez Valero (0-5) con doblete de Raphinha y Fermín, y debut con asistencia de Anthony Gordon.", link:"barca-elche.html"}], noticia:"El Barça vuelve a jugar en el remodelado Spotify Camp Nou tras las obras de renovación, con Hansi Flick al frente del proyecto.", plantillaFecha:"16 de agosto de 2026", plantilla:[
     {d:"-", n:"Marc-André ter Stegen", p:"Portero"},
     {d:13, n:"Joan García", p:"Portero"},
     {d:25, n:"Wojciech Szczęsny", p:"Portero"},
@@ -96,7 +96,7 @@ const EQUIPOS = {
     {d:19, n:"Julián Álvarez", p:"Delantero"},
     {d:22, n:"Ademola Lookman", p:"Delantero"}
   ] },
-  "athletic-club": { nombre:"Athletic Club", division:"Primera", escudoLocal:"imgescudos/Athletic-club.png", fundacion:1898, ciudad:"Bilbao", estadio:"San Mamés", apodo:"Los Leones", palmares:["Liga: 8 títulos","Copa del Rey: 23 títulos (2º máximo ganador)","Supercopa de España: 3 títulos"], noticia:"El Athletic afronta otra temporada con competición europea tras consolidarse en la zona alta de la tabla las últimas campañas.", plantillaFecha:"14 de agosto de 2026", plantilla:[
+  "athletic-club": { nombre:"Athletic Club", division:"Primera", escudoLocal:"imgescudos/Athletic-club.png", fundacion:1898, ciudad:"Bilbao", estadio:"San Mamés", apodo:"Los Leones", palmares:["Liga: 8 títulos","Copa del Rey: 23 títulos (2º máximo ganador)","Supercopa de España: 3 títulos"], noticiasReales:[{titulo:"El balón de oro ya está aquí: el Barça gana con comodidad al Athletic Club", resumen:"El Athletic cae 2-0 en el Camp Nou en el partido aplazado de la jornada 1, con goles de Raphinha y Fermín López.", link:"barca-bilbao.html"}], noticia:"El Athletic afronta otra temporada con competición europea tras consolidarse en la zona alta de la tabla las últimas campañas.", plantillaFecha:"14 de agosto de 2026", plantilla:[
     {d:1, n:"Unai Simón", p:"Portero"},
     {d:26, n:"Mikel Santos", p:"Portero"},
     {d:27, n:"Álex Padilla", p:"Portero"},
