@@ -15,17 +15,18 @@
     .hero { text-align:center; padding:24px 20px 10px; }
     .hero h1 { margin:0; font-size:1.7rem; }
     .hero p { color:#666; margin-top:6px; }
-    .contenido { max-width:1000px; margin:0 auto; padding:10px 20px 30px; }
-    .conferencia { margin-top:30px; }
-    .conferencia h2 { color:#c62828; border-left:5px solid #c62828; padding-left:10px; }
-    table { width:100%; border-collapse:collapse; font-size:0.88rem; }
-    th, td { border:1px solid #eee; padding:8px 6px; text-align:center; }
+    .contenido { max-width:1100px; margin:0 auto; padding:10px 20px 30px; }
+    .conferencias { display:flex; gap:24px; flex-wrap:wrap; }
+    .conferencia { flex:1; min-width:320px; }
+    .conferencia h2 { color:#c62828; border-left:5px solid #c62828; padding-left:10px; font-size:1.15rem; }
+    table { width:100%; border-collapse:collapse; font-size:0.85rem; }
+    th, td { border:1px solid #eee; padding:7px 6px; text-align:center; }
     th { background:#f0f0f0; }
     td.equipo { text-align:left; font-weight:bold; }
-    tr.playoff { background:#fdecea; }
-    tr.campeon td.equipo::after { content: " 🏆"; }
-    .nota { color:#888; font-size:0.82rem; margin-top:16px; text-align:center; }
+    td.equipo img { height:22px; width:22px; object-fit:contain; vertical-align:middle; margin-right:8px; }
+    .nota { color:#888; font-size:0.82rem; margin-top:20px; text-align:center; }
     footer { background:#c62828; color:#fff; text-align:center; padding:20px; margin-top:40px; }
+    @media (max-width: 720px) { .conferencias { flex-direction: column; } }
   </style>
   <link rel="stylesheet" href="tema.css">
   <script src="tema.js" defer></script>
@@ -39,57 +40,60 @@
   </nav>
 
   <div class="hero">
-    <h1>Clasificación NBA 2025-26 (final)</h1>
-    <p>Temporada terminada — campeón: New York Knicks. Estamos en el parón de verano antes del arranque de la 2026-27.</p>
+    <h1>Clasificación NBA 2026-27</h1>
+    <p>Pretemporada — todos los equipos empiezan a 0. La temporada regular arranca el 20 de octubre de 2026.</p>
   </div>
 
   <div class="contenido">
+    <div class="conferencias">
 
-    <div class="conferencia">
-      <h2>Conferencia Este</h2>
-      <table>
-        <tr><th>#</th><th>Equipo</th><th>V</th><th>D</th><th>%</th></tr>
-        <tr class="playoff"><td>1</td><td class="equipo">Detroit Pistons</td><td>60</td><td>22</td><td>.732</td></tr>
-        <tr class="playoff"><td>2</td><td class="equipo">Boston Celtics</td><td>56</td><td>26</td><td>.683</td></tr>
-        <tr class="playoff campeon"><td>3</td><td class="equipo">New York Knicks</td><td>53</td><td>29</td><td>.646</td></tr>
-        <tr class="playoff"><td>4</td><td class="equipo">Cleveland Cavaliers</td><td>52</td><td>30</td><td>.634</td></tr>
-        <tr class="playoff"><td>5</td><td class="equipo">Toronto Raptors</td><td>46</td><td>36</td><td>.561</td></tr>
-        <tr class="playoff"><td>6</td><td class="equipo">Atlanta Hawks</td><td>46</td><td>36</td><td>.561</td></tr>
-        <tr><td>7</td><td class="equipo">Philadelphia 76ers</td><td>45</td><td>37</td><td>.549</td></tr>
-        <tr><td>8</td><td class="equipo">Orlando Magic</td><td>45</td><td>37</td><td>.549</td></tr>
-        <tr><td>9</td><td class="equipo">Charlotte Hornets</td><td>44</td><td>38</td><td>.537</td></tr>
-        <tr><td>10</td><td class="equipo">Miami Heat</td><td>43</td><td>39</td><td>.524</td></tr>
-        <tr><td>11</td><td class="equipo">Milwaukee Bucks</td><td>32</td><td>50</td><td>.390</td></tr>
-        <tr><td>12</td><td class="equipo">Chicago Bulls</td><td>31</td><td>51</td><td>.378</td></tr>
-        <tr><td>13</td><td class="equipo">Brooklyn Nets</td><td>20</td><td>62</td><td>.244</td></tr>
-        <tr><td>14</td><td class="equipo">Indiana Pacers</td><td>19</td><td>63</td><td>.232</td></tr>
-        <tr><td>15</td><td class="equipo">Washington Wizards</td><td>17</td><td>65</td><td>.207</td></tr>
-      </table>
+      <div class="conferencia">
+        <h2>Conferencia Este</h2>
+        <table>
+          <tr><th>#</th><th style="text-align:left;">Equipo</th><th>V</th><th>D</th><th>%</th></tr>
+          <tr><td>1</td><td class="equipo"><img src="https://loodibee.com/wp-content/uploads/nba-atlanta-hawks-logo-300x300.png" alt="Atlanta Hawks">Atlanta Hawks</td><td>0</td><td>0</td><td>.000</td></tr>
+          <tr><td>2</td><td class="equipo"><img src="https://loodibee.com/wp-content/uploads/nba-boston-celtics-logo-300x300.png" alt="Boston Celtics">Boston Celtics</td><td>0</td><td>0</td><td>.000</td></tr>
+          <tr><td>3</td><td class="equipo"><img src="https://loodibee.com/wp-content/uploads/nba-brooklyn-nets-logo-300x300.png" alt="Brooklyn Nets">Brooklyn Nets</td><td>0</td><td>0</td><td>.000</td></tr>
+          <tr><td>4</td><td class="equipo"><img src="https://loodibee.com/wp-content/uploads/nba-charlotte-hornets-logo-300x300.png" alt="Charlotte Hornets">Charlotte Hornets</td><td>0</td><td>0</td><td>.000</td></tr>
+          <tr><td>5</td><td class="equipo"><img src="https://loodibee.com/wp-content/uploads/nba-chicago-bulls-logo-300x300.png" alt="Chicago Bulls">Chicago Bulls</td><td>0</td><td>0</td><td>.000</td></tr>
+          <tr><td>6</td><td class="equipo"><img src="https://loodibee.com/wp-content/uploads/nba-cleveland-cavaliers-logo-300x300.png" alt="Cleveland Cavaliers">Cleveland Cavaliers</td><td>0</td><td>0</td><td>.000</td></tr>
+          <tr><td>7</td><td class="equipo"><img src="https://loodibee.com/wp-content/uploads/nba-detroit-pistons-logo-300x300.png" alt="Detroit Pistons">Detroit Pistons</td><td>0</td><td>0</td><td>.000</td></tr>
+          <tr><td>8</td><td class="equipo"><img src="https://loodibee.com/wp-content/uploads/nba-indiana-pacers-logo-300x300.png" alt="Indiana Pacers">Indiana Pacers</td><td>0</td><td>0</td><td>.000</td></tr>
+          <tr><td>9</td><td class="equipo"><img src="https://loodibee.com/wp-content/uploads/nba-miami-heat-logo-300x300.png" alt="Miami Heat">Miami Heat</td><td>0</td><td>0</td><td>.000</td></tr>
+          <tr><td>10</td><td class="equipo"><img src="https://loodibee.com/wp-content/uploads/nba-milwaukee-bucks-logo-300x300.png" alt="Milwaukee Bucks">Milwaukee Bucks</td><td>0</td><td>0</td><td>.000</td></tr>
+          <tr><td>11</td><td class="equipo"><img src="https://loodibee.com/wp-content/uploads/nba-new-york-knicks-logo-300x300.png" alt="New York Knicks">New York Knicks 🏆</td><td>0</td><td>0</td><td>.000</td></tr>
+          <tr><td>12</td><td class="equipo"><img src="https://loodibee.com/wp-content/uploads/nba-orlando-magic-logo-300x300.png" alt="Orlando Magic">Orlando Magic</td><td>0</td><td>0</td><td>.000</td></tr>
+          <tr><td>13</td><td class="equipo"><img src="https://loodibee.com/wp-content/uploads/nba-philadelphia-76ers-logo-300x300.png" alt="Philadelphia 76ers">Philadelphia 76ers</td><td>0</td><td>0</td><td>.000</td></tr>
+          <tr><td>14</td><td class="equipo"><img src="https://loodibee.com/wp-content/uploads/nba-toronto-raptors-logo-300x300.png" alt="Toronto Raptors">Toronto Raptors</td><td>0</td><td>0</td><td>.000</td></tr>
+          <tr><td>15</td><td class="equipo"><img src="https://loodibee.com/wp-content/uploads/nba-washington-wizards-logo-300x300.png" alt="Washington Wizards">Washington Wizards</td><td>0</td><td>0</td><td>.000</td></tr>
+        </table>
+      </div>
+
+      <div class="conferencia">
+        <h2>Conferencia Oeste</h2>
+        <table>
+          <tr><th>#</th><th style="text-align:left;">Equipo</th><th>V</th><th>D</th><th>%</th></tr>
+          <tr><td>1</td><td class="equipo"><img src="https://loodibee.com/wp-content/uploads/nba-dallas-mavericks-logo-300x300.png" alt="Dallas Mavericks">Dallas Mavericks</td><td>0</td><td>0</td><td>.000</td></tr>
+          <tr><td>2</td><td class="equipo"><img src="https://loodibee.com/wp-content/uploads/nba-denver-nuggets-logo-300x300.png" alt="Denver Nuggets">Denver Nuggets</td><td>0</td><td>0</td><td>.000</td></tr>
+          <tr><td>3</td><td class="equipo"><img src="https://loodibee.com/wp-content/uploads/nba-golden-state-warriors-logo-300x300.png" alt="Golden State Warriors">Golden State Warriors</td><td>0</td><td>0</td><td>.000</td></tr>
+          <tr><td>4</td><td class="equipo"><img src="https://loodibee.com/wp-content/uploads/nba-houston-rockets-logo-300x300.png" alt="Houston Rockets">Houston Rockets</td><td>0</td><td>0</td><td>.000</td></tr>
+          <tr><td>5</td><td class="equipo"><img src="https://loodibee.com/wp-content/uploads/nba-la-clippers-logo-300x300.png" alt="LA Clippers">LA Clippers</td><td>0</td><td>0</td><td>.000</td></tr>
+          <tr><td>6</td><td class="equipo"><img src="https://loodibee.com/wp-content/uploads/nba-los-angeles-lakers-logo-300x300.png" alt="Los Angeles Lakers">Los Angeles Lakers</td><td>0</td><td>0</td><td>.000</td></tr>
+          <tr><td>7</td><td class="equipo"><img src="https://loodibee.com/wp-content/uploads/nba-memphis-grizzlies-logo-300x300.png" alt="Memphis Grizzlies">Memphis Grizzlies</td><td>0</td><td>0</td><td>.000</td></tr>
+          <tr><td>8</td><td class="equipo"><img src="https://loodibee.com/wp-content/uploads/nba-minnesota-timberwolves-logo-300x300.png" alt="Minnesota Timberwolves">Minnesota Timberwolves</td><td>0</td><td>0</td><td>.000</td></tr>
+          <tr><td>9</td><td class="equipo"><img src="https://loodibee.com/wp-content/uploads/nba-new-orleans-pelicans-logo-300x300.png" alt="New Orleans Pelicans">New Orleans Pelicans</td><td>0</td><td>0</td><td>.000</td></tr>
+          <tr><td>10</td><td class="equipo"><img src="https://loodibee.com/wp-content/uploads/nba-oklahoma-city-thunder-logo-300x300.png" alt="Oklahoma City Thunder">Oklahoma City Thunder</td><td>0</td><td>0</td><td>.000</td></tr>
+          <tr><td>11</td><td class="equipo"><img src="https://loodibee.com/wp-content/uploads/nba-phoenix-suns-logo-300x300.png" alt="Phoenix Suns">Phoenix Suns</td><td>0</td><td>0</td><td>.000</td></tr>
+          <tr><td>12</td><td class="equipo"><img src="https://loodibee.com/wp-content/uploads/nba-portland-trail-blazers-logo-300x300.png" alt="Portland Trail Blazers">Portland Trail Blazers</td><td>0</td><td>0</td><td>.000</td></tr>
+          <tr><td>13</td><td class="equipo"><img src="https://loodibee.com/wp-content/uploads/nba-sacramento-kings-logo-300x300.png" alt="Sacramento Kings">Sacramento Kings</td><td>0</td><td>0</td><td>.000</td></tr>
+          <tr><td>14</td><td class="equipo"><img src="https://loodibee.com/wp-content/uploads/nba-san-antonio-spurs-logo-300x300.png" alt="San Antonio Spurs">San Antonio Spurs</td><td>0</td><td>0</td><td>.000</td></tr>
+          <tr><td>15</td><td class="equipo"><img src="https://loodibee.com/wp-content/uploads/nba-utah-jazz-logo-300x300.png" alt="Utah Jazz">Utah Jazz</td><td>0</td><td>0</td><td>.000</td></tr>
+        </table>
+      </div>
+
     </div>
 
-    <div class="conferencia">
-      <h2>Conferencia Oeste</h2>
-      <table>
-        <tr><th>#</th><th>Equipo</th><th>V</th><th>D</th><th>%</th></tr>
-        <tr class="playoff"><td>1</td><td class="equipo">Oklahoma City Thunder</td><td>64</td><td>18</td><td>.780</td></tr>
-        <tr class="playoff"><td>2</td><td class="equipo">San Antonio Spurs</td><td>62</td><td>20</td><td>.756</td></tr>
-        <tr class="playoff"><td>3</td><td class="equipo">Denver Nuggets</td><td>54</td><td>28</td><td>.659</td></tr>
-        <tr class="playoff"><td>4</td><td class="equipo">Los Angeles Lakers</td><td>53</td><td>29</td><td>.646</td></tr>
-        <tr class="playoff"><td>5</td><td class="equipo">Houston Rockets</td><td>52</td><td>30</td><td>.634</td></tr>
-        <tr class="playoff"><td>6</td><td class="equipo">Minnesota Timberwolves</td><td>49</td><td>33</td><td>.598</td></tr>
-        <tr><td>7</td><td class="equipo">Phoenix Suns</td><td>45</td><td>37</td><td>.549</td></tr>
-        <tr><td>8</td><td class="equipo">Portland Trail Blazers</td><td>42</td><td>40</td><td>.512</td></tr>
-        <tr><td>9</td><td class="equipo">LA Clippers</td><td>42</td><td>40</td><td>.512</td></tr>
-        <tr><td>10</td><td class="equipo">Golden State Warriors</td><td>37</td><td>45</td><td>.451</td></tr>
-        <tr><td>11</td><td class="equipo">New Orleans Pelicans</td><td>26</td><td>56</td><td>.317</td></tr>
-        <tr><td>12</td><td class="equipo">Dallas Mavericks</td><td>26</td><td>56</td><td>.317</td></tr>
-        <tr><td>13</td><td class="equipo">Memphis Grizzlies</td><td>25</td><td>57</td><td>.305</td></tr>
-        <tr><td>14</td><td class="equipo">Sacramento Kings</td><td>22</td><td>60</td><td>.268</td></tr>
-        <tr><td>15</td><td class="equipo">Utah Jazz</td><td>22</td><td>60</td><td>.268</td></tr>
-      </table>
-    </div>
-
-    <p class="nota">Filas en rojo = clasificados a playoffs (1-6 directos; 7-10 disputan el Play-In). New York Knicks se proclamó campeón de las Finales 2026 ante San Antonio Spurs (4-1). Datos: temporada regular 2025-26 completa.</p>
+    <p class="nota">Todos los equipos aparecen en orden alfabético a 0 victorias-0 derrotas porque la temporada 2026-27 todavía no ha comenzado. New York Knicks (🏆) son los campeones vigentes de las Finales NBA 2026. La tabla se irá ordenando por porcentaje de victorias en cuanto arranque la temporada regular el 20 de octubre.</p>
   </div>
 
   <footer>
