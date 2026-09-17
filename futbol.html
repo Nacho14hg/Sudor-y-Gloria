@@ -6,65 +6,20 @@
   <title>Fútbol | Sudor y Gloria</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    .escudos {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .escudos img {
-      height: 40px;
-      width: auto;
-      object-fit: contain;
-    }
-    .escudos a {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 60px;
-      text-decoration: none;
-    }
-    .escudos .badge-texto {
-      height: 40px;
-      width: 40px;
-      border-radius: 50%;
-      background: #c0392b;
-      color: #fff;
-      font-size: 11px;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      line-height: 1;
-    }
-    .escudos span.nombre {
-      font-size: 10px;
-      color: #333;
-      margin-top: 2px;
-      text-align: center;
-    }
-    .liga-titulo {
-      text-align: center;
-      font-weight: bold;
-      font-size: 1.1rem;
-      margin-bottom: 10px;
-      color: #c0392b;
-    }
-    footer {
-      margin-top: 40px;
-    }
+    .escudos { display:flex; justify-content:center; flex-wrap:wrap; gap:8px; }
+    .escudos img { height:40px; width:auto; object-fit:contain; }
+    .escudos a { display:flex; flex-direction:column; align-items:center; width:60px; text-decoration:none; }
+    .escudos .badge-texto { height:40px; width:40px; border-radius:50%; background:#c0392b; color:#fff; font-size:11px; font-weight:bold; display:flex; align-items:center; justify-content:center; text-align:center; line-height:1; }
+    .escudos span.nombre { font-size:10px; color:#333; margin-top:2px; text-align:center; }
+    .liga-titulo { text-align:center; font-weight:bold; font-size:1.1rem; margin-bottom:10px; color:#c0392b; }
+    footer { margin-top:40px; }
   </style>
   <link rel="stylesheet" href="tema.css">
   <script src="tema.js" defer></script>
 </head>
 <body class="bg-white text-black">
-
-  <!-- Encabezado -->
   <header class="bg-red-600 py-4 text-center">
-    <h1 class="text-white text-2xl font-bold">
-      <a href="index.html">SUDOR Y GLORIA</a>
-    </h1>
+    <h1 class="text-white text-2xl font-bold"><a href="index.html">SUDOR Y GLORIA</a></h1>
   </header>
   <nav class="bg-black flex justify-center gap-6 py-2 flex-wrap">
     <a href="futbol.html" class="text-white font-bold underline">Noticias</a>
@@ -72,7 +27,6 @@
     <a href="futbol-calendario.html" class="text-white font-bold hover:underline">Calendario</a>
   </nav>
 
-  <!-- Primera División 2026-27 -->
   <section class="py-4 bg-white">
     <p class="liga-titulo">LALIGA EA SPORTS 2026-27</p>
     <div class="escudos">
@@ -99,7 +53,6 @@
     </div>
   </section>
 
-  <!-- Segunda División (LALIGA Hypermotion) 2026-27 -->
   <section class="py-4 border-t bg-white">
     <p class="liga-titulo">LALIGA HYPERMOTION 2026-27</p>
     <div class="escudos">
@@ -128,7 +81,6 @@
     </div>
   </section>
 
-  <!-- Últimas Noticias -->
   <section class="py-6 container mx-auto px-4 bg-white">
     <h2 class="text-xl font-bold mb-4">Últimas noticias</h2>
     <div class="text-center mb-4">
@@ -138,7 +90,8 @@
       </select>
     </div>
     <ul class="list-disc pl-5 space-y-2" id="noticias-primera">
-      <li><a href="mercado-fichajes-barca.html" class="hover:text-red-600">Analizando la 'summeriana' del Barça</a></li>
+      <li><a href="barca-racing-goleada.html" class="hover:text-red-600">Lágrimas de Paco Gento tras la goleada del Barça</a></li>
+      <li><a href="barca-summeriana.html" class="hover:text-red-600">Analizando la ‘summeriana’ del Barça</a></li>
       <li><a href="barca-bilbao.html" class="hover:text-red-600">El balón de oro ya está aquí: el Barça gana con comodidad al Athletic Club</a></li>
       <li><a href="barca-elche.html" class="hover:text-red-600">El Barça inicia la liga con goleada</a></li>
       <li><a href="racing-villarreal.html" class="hover:text-red-600">El Racing de Santander puntúa en liga 14 años después</a></li>
@@ -155,7 +108,6 @@
     }
   </script>
 
-  <!-- Pie de página -->
   <footer class="bg-red-600 text-white text-center py-6">
     <p>&copy; 2025 Sudor y Gloria. Todos los derechos reservados.</p>
     <div class="flex justify-center space-x-4 mt-2">
@@ -164,6 +116,5 @@
       <a href="https://www.facebook.com/profile.php?id=61580640520045" target="_blank">Facebook</a>
     </div>
   </footer>
-
 </body>
 </html>

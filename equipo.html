@@ -96,10 +96,10 @@
 
           <div class="panel activo" id="panel-noticias">
             <h2>Últimas noticias</h2>
-            ${id === 'barcelona' ? `
+            ${(id === 'racing-santander' || id === 'barcelona') ? `
               <div class="noticia">
-                <h3 style="margin:0 0 4px; font-size:1rem;"><a href="barca-summeriana.html" style="color:#c62828; text-decoration:none;">Analizando la ‘summeriana’ del Barça</a></h3>
-                <p style="margin:0; color:#555; font-size:0.85rem;">Por Nacho · 12 de septiembre de 2026. Análisis del mercado de fichajes de verano del Barça.</p>
+                <h3 style="margin:0 0 4px; font-size:1rem;"><a href="barca-racing-goleada.html" style="color:#c62828; text-decoration:none;">Lágrimas de Paco Gento tras la goleada del Barça</a></h3>
+                <p style="margin:0; color:#555; font-size:0.85rem;">Por Nacho · 17 de septiembre de 2026. Crónica del 7-2 entre FC Barcelona y Racing de Santander.</p>
               </div>
             ` : ''}
             ${(equipo.noticiasReales || []).map(n => `
