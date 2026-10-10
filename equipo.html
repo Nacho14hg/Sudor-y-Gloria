@@ -96,7 +96,7 @@
 
           <div class="panel activo" id="panel-noticias">
             <h2>Últimas noticias</h2>
-            ${((id === 'barcelona') ? [{ titulo: "Analizando la ‘summeriana’ del Barça", link: "barca-summeriana.html", resumen: "Repaso del mercado de fichajes veraniego del FC Barcelona." }, ...(equipo.noticiasReales || [])] : (equipo.noticiasReales || [])).map(n => `
+            ${((id === 'barcelona') ? [{ titulo: "Lágrimas de Paco Gento tras la goleada del Barça", link: "barca-racing-goleada.html", resumen: "Crónica de la goleada del Barça ante el Racing de Santander." }, { titulo: "Analizando la ‘summeriana’ del Barça", link: "barca-summeriana.html", resumen: "Repaso del mercado de fichajes veraniego del FC Barcelona." }, ...(equipo.noticiasReales || [])] : (id === 'racing-santander' ? [{ titulo: "Lágrimas de Paco Gento tras la goleada del Barça", link: "barca-racing-goleada.html", resumen: "Crónica del Barça-Racing y sus consecuencias para el conjunto santanderino." }, ...(equipo.noticiasReales || [])] : (equipo.noticiasReales || []))).map(n => `
               <div class="noticia">
                 <h3 style="margin:0 0 4px; font-size:1rem;"><a href="${n.link}" style="color:#c62828; text-decoration:none;">${n.titulo}</a></h3>
                 <p style="margin:0; color:#555; font-size:0.85rem;">${n.resumen}</p>
